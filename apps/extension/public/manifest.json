@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Longcon",
+  "description": "Catches long-con scams across weeks of chat. Every message is checked on your device.",
+  "version": "0.0.1",
+  "minimum_chrome_version": "139",
+  "action": { "default_title": "Open Longcon" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["sidePanel", "storage"],
+  "host_permissions": ["https://web.whatsapp.com/*", "https://mail.google.com/*"]
+}
