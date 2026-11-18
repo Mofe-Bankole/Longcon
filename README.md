@@ -45,7 +45,7 @@ On-device inference needs desktop Chrome 139+ with Gemini Nano enabled. See
 ### Firebase setup
 1. Create a Firebase project → **AI Logic** → get started with the **Gemini Developer API**.
 2. Register a **Web app** and copy its config into `.env.local`.
-3. **App Check**: register the web app with reCAPTCHA v3 (google.com/recaptcha/admin, score-based). For local dev and the extension,
+3. **App Check**: register the web app with reCAPTCHA Enterprise (Google Cloud console → Security → reCAPTCHA, website key, no checkbox). For local dev and the extension,
    set `VITE_APPCHECK_DEBUG_TOKEN=true`, copy the token printed in the console, and register it under
    App Check → Manage debug tokens.
 

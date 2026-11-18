@@ -1,5 +1,5 @@
 import { initializeApp, type FirebaseApp, type FirebaseOptions } from 'firebase/app';
-import { CustomProvider, initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
+import { CustomProvider, initializeAppCheck, ReCaptchaEnterpriseProvider } from 'firebase/app-check';
 import {
   getAI,
   getGenerativeModel,
@@ -14,7 +14,7 @@ import type { ChatMessage, Route, TacticHit, TaggedMessage } from './types';
 
 export interface LongconEnv {
   firebase: FirebaseOptions;
-  /** reCAPTCHA v3 site key (web). Omit in the extension. */
+  /** reCAPTCHA Enterprise site key (web). Omit in the extension. */
   recaptchaSiteKey?: string;
   /** App Check debug token: `true` to generate one (dev), or a registered token string. */
   appCheckDebugToken?: string | boolean;
@@ -38,7 +38,7 @@ export function initLongcon(env: LongconEnv): AI {
   // In debug mode the SDK exchanges the debug token and never calls the provider.
   // Extensions can't load reCAPTCHA (MV3 forbids remote code), so they rely on debug mode.
   const provider = env.recaptchaSiteKey
-    ? new ReCaptchaV3Provider(env.recaptchaSiteKey)
+    ? new ReCaptchaEnterpriseProvider(env.recaptchaSiteKey)
     : new CustomProvider({
         getToken: () => Promise.reject(new Error('No App Check provider: set a debug token or a reCAPTCHA site key')),
       });
