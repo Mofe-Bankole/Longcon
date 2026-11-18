@@ -102,7 +102,7 @@ households/{hid}
 | Product | Use |
 |---|---|
 | AI Logic | Web: Chrome Nano (`ONLY_ON_DEVICE`, or `PREFER_ON_DEVICE` with consent). Android: AICore Nano, same modes. Cloud judge: `ONLY_IN_CLOUD` + Google Search grounding |
-| App Check | Web: reCAPTCHA Enterprise. Extension + sideloaded Android APK: debug provider (allowed by contest rules) |
+| App Check | Web: reCAPTCHA v3. Extension + sideloaded Android APK: debug provider (allowed by contest rules) |
 | Auth | Anonymous auth per device, bound to a household at pairing |
 | Firestore | Household signals (schema above) + security rules (members only) |
 | Remote Config | Tactics, weights, thresholds, prompts |
