@@ -5,3 +5,10 @@ dist/
 *.log
 .DS_Store
 .vite/
+
+# Android secrets
+apps/android/app/google-services.json
+*.keystore
+local.properties
+.gradle/
+build/
