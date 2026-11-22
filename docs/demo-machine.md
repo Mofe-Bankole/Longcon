@@ -27,8 +27,12 @@ happen on a Google Cloud free-trial VM, viewed through Chrome Remote Desktop.
 3. Sanity check in DevTools: `await LanguageModel.availability()` should eventually return `"available"`.
 
 ## 4. Load Longcon
-- Web: open the hosted URL (or `pnpm dev:web` on the VM).
-- Extension: copy `apps/extension/dist` to the VM → `chrome://extensions` → Developer mode → **Load unpacked**.
+The repo is private and the VM has no Node, so build on your laptop and carry the result over:
+1. Laptop: `bash scripts/vm-bundle.sh` → `longcon-vm.zip` (contains your debug token; it is gitignored).
+2. Upload it to **your own** Google Drive. In the VM's Chrome, sign in to Drive, download it, then in the VM terminal:
+   `cd ~/Downloads && unzip longcon-vm.zip -d longcon && bash longcon/serve-web.sh`
+- Web: open `http://localhost:5173` in the VM's Chrome.
+- Extension: `chrome://extensions` → Developer mode → **Load unpacked** → `~/Downloads/longcon/extension` → click the Longcon icon.
 - In the spike panel, click **Prepare on-device model**, then **Tag message**. It should report `route: "on_device"`.
 
 ## Cost control

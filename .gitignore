@@ -12,3 +12,7 @@ apps/android/app/google-services.json
 local.properties
 .gradle/
 build/
+
+# Nano VM bundle (contains the debug token)
+longcon-vm.zip
+.vm-bundle/
