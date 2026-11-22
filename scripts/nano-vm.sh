@@ -23,7 +23,7 @@ set -e
 [ -f /var/lib/longcon-ready ] && exit 0
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
-apt-get install -y xfce4 xfce4-goodies dbus-x11 xscreensaver fonts-noto-color-emoji wget
+apt-get install -y xfce4 xfce4-goodies dbus-x11 xscreensaver fonts-noto-color-emoji wget unzip python3
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
 wget -q https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -O /tmp/crd.deb
 apt-get install -y /tmp/chrome.deb /tmp/crd.deb
