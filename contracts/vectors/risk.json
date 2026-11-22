@@ -1,0 +1,459 @@
+[
+  {
+    "name": "normal_chat",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": []
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793577600000,
+        "route": "on_device",
+        "tactics": []
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1793664000000,
+        "route": "on_device",
+        "tactics": []
+      }
+    ],
+    "expect": {
+      "score": 0,
+      "level": "clear",
+      "stageReached": null,
+      "shouldCheck": false,
+      "shouldEscalate": false,
+      "days": []
+    }
+  },
+  {
+    "name": "single_love_bombing",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "love_bombing"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 10,
+      "level": "clear",
+      "stageReached": "rapport",
+      "shouldCheck": false,
+      "shouldEscalate": false,
+      "days": [
+        0
+      ]
+    }
+  },
+  {
+    "name": "romance_full_arc",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "love_bombing",
+          "unverifiable_persona"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793836800000,
+        "route": "on_device",
+        "tactics": [
+          "move_off_platform"
+        ]
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1794268800000,
+        "route": "on_device",
+        "tactics": [
+          "secrecy_request"
+        ]
+      },
+      {
+        "messageId": "m3",
+        "sentAt": 1794787200000,
+        "route": "on_device",
+        "tactics": [
+          "investment_pitch"
+        ]
+      },
+      {
+        "messageId": "m4",
+        "sentAt": 1795305600000,
+        "route": "on_device",
+        "tactics": [
+          "payment_request",
+          "risky_payment_method"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 98,
+      "level": "danger",
+      "stageReached": "extraction",
+      "shouldCheck": true,
+      "shouldEscalate": true,
+      "days": [
+        0,
+        0,
+        4,
+        9,
+        15,
+        21,
+        21
+      ]
+    }
+  },
+  {
+    "name": "romance_rules_only",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "rules",
+        "tactics": [
+          "love_bombing",
+          "unverifiable_persona"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793836800000,
+        "route": "rules",
+        "tactics": [
+          "move_off_platform"
+        ]
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1794268800000,
+        "route": "rules",
+        "tactics": [
+          "secrecy_request"
+        ]
+      },
+      {
+        "messageId": "m3",
+        "sentAt": 1795305600000,
+        "route": "rules",
+        "tactics": [
+          "payment_request",
+          "risky_payment_method"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 83,
+      "level": "danger",
+      "stageReached": "extraction",
+      "shouldCheck": true,
+      "shouldEscalate": true,
+      "days": [
+        0,
+        0,
+        4,
+        9,
+        21,
+        21
+      ]
+    }
+  },
+  {
+    "name": "mixed_routes_confirm",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "rules",
+        "tactics": [
+          "risky_payment_method"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793577600000,
+        "route": "on_device",
+        "tactics": [
+          "risky_payment_method"
+        ]
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1793577600000,
+        "route": "rules",
+        "tactics": [
+          "urgency_pressure"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 59,
+      "level": "warning",
+      "stageReached": "extraction",
+      "shouldCheck": true,
+      "shouldEscalate": false,
+      "days": [
+        0,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "name": "impersonation_same_day",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "impersonation",
+          "urgency_pressure"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793491200000,
+        "route": "in_cloud",
+        "tactics": [
+          "payment_request",
+          "risky_payment_method"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 87,
+      "level": "danger",
+      "stageReached": "extraction",
+      "shouldCheck": true,
+      "shouldEscalate": true,
+      "days": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "name": "shuffled_arc",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "crisis_story"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793923200000,
+        "route": "on_device",
+        "tactics": [
+          "secrecy_request"
+        ]
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1794355200000,
+        "route": "on_device",
+        "tactics": [
+          "love_bombing"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 62,
+      "level": "warning",
+      "stageReached": "hook",
+      "shouldCheck": true,
+      "shouldEscalate": true,
+      "days": [
+        0,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "name": "ordered_arc",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "love_bombing"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793923200000,
+        "route": "on_device",
+        "tactics": [
+          "secrecy_request"
+        ]
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1794355200000,
+        "route": "on_device",
+        "tactics": [
+          "crisis_story"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 70,
+      "level": "warning",
+      "stageReached": "hook",
+      "shouldCheck": true,
+      "shouldEscalate": true,
+      "days": [
+        0,
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "name": "repeats",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "urgency_pressure"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793577600000,
+        "route": "on_device",
+        "tactics": [
+          "urgency_pressure"
+        ]
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1793664000000,
+        "route": "on_device",
+        "tactics": [
+          "urgency_pressure"
+        ]
+      },
+      {
+        "messageId": "m3",
+        "sentAt": 1793750400000,
+        "route": "on_device",
+        "tactics": [
+          "urgency_pressure"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 27,
+      "level": "watch",
+      "stageReached": "hook",
+      "shouldCheck": false,
+      "shouldEscalate": false,
+      "days": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "name": "job_scam",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "job_offer_bait"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793577600000,
+        "route": "on_device",
+        "tactics": [
+          "move_off_platform"
+        ]
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1793750400000,
+        "route": "on_device",
+        "tactics": [
+          "job_offer_bait",
+          "payment_request"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 72,
+      "level": "danger",
+      "stageReached": "extraction",
+      "shouldCheck": true,
+      "shouldEscalate": true,
+      "days": [
+        0,
+        1,
+        3,
+        3
+      ]
+    }
+  },
+  {
+    "name": "otp_grab",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "impersonation"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "credential_request",
+          "urgency_pressure"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 76,
+      "level": "danger",
+      "stageReached": "extraction",
+      "shouldCheck": true,
+      "shouldEscalate": true,
+      "days": [
+        0,
+        0,
+        0
+      ]
+    }
+  }
+]

@@ -1,0 +1,28 @@
+.lc-arc { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s1); }
+.lc-arc__seg { display: flex; flex-direction: column; gap: var(--s1); min-width: 0; }
+.lc-arc__bar {
+  height: 10px; border-radius: 999px; background: var(--surface-2);
+  position: relative; overflow: hidden;
+}
+.lc-arc__bar::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  background: var(--seg); transform-origin: left; transform: scaleX(0);
+  transition: transform 600ms var(--ease), opacity 300ms;
+}
+.lc-arc__seg[data-state='provisional'] .lc-arc__bar::after { transform: scaleX(1); opacity: 0.35; }
+.lc-arc__seg[data-state='provisional'] .lc-arc__bar { outline: 1.5px dashed var(--seg); outline-offset: -1.5px; }
+.lc-arc__seg[data-state='confirmed'] .lc-arc__bar::after { transform: scaleX(1); opacity: 1; }
+.lc-arc__label { font-size: var(--text-sm); color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lc-arc__seg[data-state='confirmed'] .lc-arc__label { color: var(--ink); font-weight: 600; }
+.lc-arc__day { font-size: 0.75rem; color: var(--ink-2); font-variant-numeric: tabular-nums; min-height: 1em; }
+.lc-arc--compact .lc-arc__label, .lc-arc--compact .lc-arc__day { display: none; }
+.lc-arc--compact .lc-arc__bar { height: 6px; }
+
+.lc-route {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  font-size: var(--text-sm); color: var(--route); font-weight: 600;
+}
+.lc-route[data-route='on_device'] { --route: var(--route-on-device); }
+.lc-route[data-route='in_cloud'] { --route: var(--route-in-cloud); }
+.lc-route[data-route='rules'] { --route: var(--route-rules); }
+.lc-route svg { width: 1em; height: 1em; }

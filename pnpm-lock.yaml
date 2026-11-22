@@ -39,12 +39,27 @@ importers:
         specifier: ^13.3.0
         version: 13.3.0
     devDependencies:
+      '@types/node':
+        specifier: ^26.6.6
+        version: 26.6.6
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
       vitest:
         specifier: ^5.1.0
         version: 5.1.0(@opentelemetry/api@1.9.1)(@types/node@26.6.6)(vite@8.3.8(@types/node@26.6.6))
+
+  packages/ui:
+    dependencies:
+      '@fontsource-variable/atkinson-hyperlegible-next':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource-variable/newsreader':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@longcon/core':
+        specifier: workspace:*
+        version: link:../core
 
 packages:
 
@@ -310,6 +325,12 @@ packages:
 
   '@firebase/webchannel-wrapper@1.0.7':
     resolution: {integrity: sha512-phBFwieDLvkZGYN9CE9ZFNEIoBVksprzsnCzQejCmCHtgwCXReeuRpoEGN9C4EbhONztv8NRV1tau6Rb9pONwQ==}
+
+  '@fontsource-variable/atkinson-hyperlegible-next@5.3.0':
+    resolution: {integrity: sha512-UnLzNUy1RWoLDfydAatP4NaRm99X/WbQEph7q/PymJnCFIOOwKOx3pBmp5ys8trO0dM+CKGuJgeZP9fAR4mQpA==}
+
+  '@fontsource-variable/newsreader@5.3.0':
+    resolution: {integrity: sha512-rrzYi43qMpbzwuFtf9OkWH8sxAPVPcQQQEwXpPtwaKYeJ8yVg5aLs5kawmo1f2Q1t1M38TLmEKCkGVDsYwgdFw==}
 
   '@grpc/grpc-js@1.9.16':
     resolution: {integrity: sha512-wE4Ut/olIzfKqp631XrG+wbF0v1vWFN4YL9FyXC2LJiG33DsV7PLzURjrCvY/6je2ntdRkeLpPDluzSRGaVltQ==}
@@ -1512,6 +1533,10 @@ snapshots:
       tslib: 2.9.1
 
   '@firebase/webchannel-wrapper@1.0.7': {}
+
+  '@fontsource-variable/atkinson-hyperlegible-next@5.3.0': {}
+
+  '@fontsource-variable/newsreader@5.3.0': {}
 
   '@grpc/grpc-js@1.9.16':
     dependencies:

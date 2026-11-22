@@ -1,8 +1,12 @@
 export * from './tactics';
 export * from './types';
 export * from './risk';
+export * from './rules';
+export * from './hash';
 export * from './redact';
 export * from './prompts';
 export * from './ai';
+export * from './metrics';
+export * from './router';
 export { mountSpike } from './spike';
 export { envFromVite } from './env';

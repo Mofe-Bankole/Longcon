@@ -3,6 +3,8 @@ import type { Stage, TacticId } from './tactics';
 /** Where a model call actually ran. Mirrors firebase/ai InferenceSource. */
 export type Route = 'on_device' | 'in_cloud' | 'rules';
 
+export type Channel = 'gmail' | 'whatsapp' | 'messenger' | 'sms' | 'telegram' | 'demo';
+
 /** A chat message as read from WhatsApp Web, Gmail, the demo inbox, etc. */
 export interface ChatMessage {
   id: string;
@@ -13,7 +15,7 @@ export interface ChatMessage {
   text: string;
   /** Epoch millis. */
   sentAt: number;
-  source: 'whatsapp' | 'gmail' | 'demo';
+  source: Channel;
 }
 
 export interface TacticHit {
@@ -32,6 +34,9 @@ export interface TaggedMessage {
 }
 
 export interface TimelineEvent {
+  messageId: string;
+  /** How this event was produced. `rules` events are provisional. */
+  route: Route;
   /** Days since the first message with this contact. */
   day: number;
   sentAt: number;
@@ -55,4 +60,8 @@ export interface ContactRisk {
   timeline: TimelineEvent[];
   /** True once the score crossed the escalation threshold. */
   shouldEscalate: boolean;
+  /** True once the score crossed the "tap to check" threshold (Android) / "check now" prompt (web). */
+  shouldCheck: boolean;
+  /** How many timeline events each route produced. */
+  routes: Record<Route, number>;
 }

@@ -1,0 +1,91 @@
+/* Longcon design tokens. The only source of colour, type and spacing. See docs/design.md. */
+@import '@fontsource-variable/atkinson-hyperlegible-next/index.css';
+@import '@fontsource-variable/newsreader/index.css';
+
+:root {
+  color-scheme: light dark;
+
+  /* Paper & ink */
+  --paper: #faf7f2;
+  --surface: #ffffff;
+  --surface-2: #f3eee6;
+  --ink: #1c1a17;
+  --ink-2: #5c554a;
+  --line: #e6e0d6;
+  --focus: #1f5a8c;
+
+  /* The Arc: stage ramp (fills; always paired with a label) */
+  --stage-rapport: #8fae95;
+  --stage-isolation: #d9ad45;
+  --stage-hook: #df7a35;
+  --stage-extraction: #b3261e;
+
+  /* Levels (text-safe, ≥ 4.5:1 on paper) */
+  --level-clear: #2e6a4d;
+  --level-watch: #7d5f0e;
+  --level-warning: #a84a0b;
+  --level-danger: #a8231c;
+
+  /* Routes (text-safe) */
+  --route-on-device: #1f5a8c;
+  --route-in-cloud: #5b3f99;
+  --route-rules: #5f5f5f;
+
+  /* Type */
+  --font-ui: 'Atkinson Hyperlegible Next Variable', system-ui, sans-serif;
+  --font-display: 'Newsreader Variable', Georgia, serif;
+  --text-base: 16px;          /* guardian / dashboard */
+  --text-sm: 0.875rem;
+  --text-lg: 1.25rem;
+  --text-verdict: 1.75rem;
+  --leading: 1.5;
+
+  /* Space, shape */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px;
+  --radius: 12px;
+  --radius-sm: 6px;
+  --tap: 48px;
+  --shadow: 0 1px 2px rgb(28 26 23 / 0.06), 0 4px 16px rgb(28 26 23 / 0.06);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Protected-person surfaces (side panel, Android-equivalent web views) */
+.lc-large {
+  --text-base: 20px;
+  --text-verdict: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #16140f; --surface: #1f1c16; --surface-2: #29251d;
+    --ink: #f2ede4; --ink-2: #b5ac9d; --line: #3a342a; --focus: #7db4e6;
+    --stage-rapport: #6f9477; --stage-isolation: #c99a2e; --stage-hook: #d2691e; --stage-extraction: #d8443a;
+    --level-clear: #7fc7a1; --level-watch: #e0bf5c; --level-warning: #f0965a; --level-danger: #f27d73;
+    --route-on-device: #7db4e6; --route-in-cloud: #b79cf0; --route-rules: #a8a8a8;
+    --shadow: none;
+  }
+}
+:root[data-theme='dark'] {
+  --paper: #16140f; --surface: #1f1c16; --surface-2: #29251d;
+  --ink: #f2ede4; --ink-2: #b5ac9d; --line: #3a342a; --focus: #7db4e6;
+  --stage-rapport: #6f9477; --stage-isolation: #c99a2e; --stage-hook: #d2691e; --stage-extraction: #d8443a;
+  --level-clear: #7fc7a1; --level-watch: #e0bf5c; --level-warning: #f0965a; --level-danger: #f27d73;
+  --route-on-device: #7db4e6; --route-in-cloud: #b79cf0; --route-rules: #a8a8a8;
+  --shadow: none;
+}
+
+html { font-size: var(--text-base); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  line-height: var(--leading);
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+button { font: inherit; min-height: var(--tap); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

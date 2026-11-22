@@ -8,7 +8,7 @@ import {
   type AI,
   type GenerativeModel,
 } from 'firebase/ai';
-import { TAG_SCHEMA, TAGGER_SYSTEM, taggerPrompt } from './prompts';
+import { BATCH_TAG_SCHEMA, BATCH_TAGGER_SYSTEM, batchTaggerPrompt, TAG_SCHEMA, TAGGER_SYSTEM, taggerPrompt } from './prompts';
 import { isTacticId } from './tactics';
 import type { ChatMessage, Route, TacticHit, TaggedMessage } from './types';
 
@@ -55,26 +55,30 @@ export interface TaggerOptions {
    */
   allowCloudFallback: boolean;
   cloudModel?: string;
+  /** Tag several messages per call (web default). Android uses single-message calls (4k-token limit). */
+  batch?: boolean;
 }
 
 export function createTaggerModel(ai: AI, opts: TaggerOptions): GenerativeModel {
+  const system = opts.batch ? BATCH_TAGGER_SYSTEM : TAGGER_SYSTEM;
+  const schema = opts.batch ? BATCH_TAG_SCHEMA : TAG_SCHEMA;
   return getGenerativeModel(ai, {
     mode: opts.allowCloudFallback ? InferenceMode.PREFER_ON_DEVICE : InferenceMode.ONLY_ON_DEVICE,
     onDeviceParams: {
       createOptions: {
         expectedInputs: [{ type: 'text', languages: ['en'] }],
         expectedOutputs: [{ type: 'text', languages: ['en'] }],
-        initialPrompts: [{ role: 'system', content: [{ type: 'text', value: TAGGER_SYSTEM }] }],
+        initialPrompts: [{ role: 'system', content: [{ type: 'text', value: system }] }],
       },
-      promptOptions: { responseConstraint: TAG_SCHEMA },
+      promptOptions: { responseConstraint: schema },
     },
     inCloudParams: {
       model: opts.cloudModel ?? DEFAULT_CLOUD_MODEL,
-      systemInstruction: TAGGER_SYSTEM,
+      systemInstruction: system,
       generationConfig: {
         temperature: 0,
         responseMimeType: 'application/json',
-        responseJsonSchema: TAG_SCHEMA as unknown as Record<string, unknown>,
+        responseJsonSchema: schema as unknown as Record<string, unknown>,
       },
     },
   });
@@ -100,17 +104,65 @@ export async function tagMessage(
   };
 }
 
+/**
+ * Label a batch of messages from one contact in a single model call.
+ * Returns one TaggedMessage per input, in order. Latency is the call's total divided across the batch.
+ */
+export async function tagBatch(
+  model: GenerativeModel,
+  msgs: ChatMessage[],
+  context: string[] = [],
+): Promise<TaggedMessage[]> {
+  if (msgs.length === 0) return [];
+  const t0 = performance.now();
+  const result = await model.generateContent(batchTaggerPrompt(msgs.map((m) => m.text), context.slice(-3)));
+  const latencyMs = Math.round(performance.now() - t0);
+  const route: Route = (result.response.inferenceSource as Route | undefined) ?? 'in_cloud';
+  const byN = parseBatch(result.response.text());
+  return msgs.map((m, i) => ({
+    messageId: m.id,
+    contactId: m.contactId,
+    sentAt: m.sentAt,
+    hits: normaliseHits(byN.get(i + 1) ?? [], m.text),
+    route,
+    latencyMs: Math.round(latencyMs / msgs.length),
+  }));
+}
+
+/** Warm-up: loads Nano into memory so the first real check is fast. Call when the panel opens. */
+export async function warmUp(model: GenerativeModel): Promise<number> {
+  const t0 = performance.now();
+  await model.generateContent('Messages to label:\n[1] hello\n\nReturn JSON.').catch(() => undefined);
+  return Math.round(performance.now() - t0);
+}
+
+function parseBatch(raw: string): Map<number, unknown[]> {
+  const out = new Map<number, unknown[]>();
+  const parsed = parseJsonObject(raw) as { results?: unknown } | undefined;
+  if (!Array.isArray(parsed?.results)) return out;
+  for (const r of parsed.results) {
+    const n = Number((r as { n?: unknown }).n);
+    const hits = (r as { hits?: unknown }).hits;
+    if (Number.isInteger(n) && Array.isArray(hits) && !out.has(n)) out.set(n, hits);
+  }
+  return out;
+}
+
+function parseJsonObject(raw: string): unknown {
+  try {
+    return JSON.parse(raw.slice(raw.indexOf('{'), raw.lastIndexOf('}') + 1));
+  } catch {
+    return undefined;
+  }
+}
+
 /** Defensive parse: small models occasionally wrap JSON or invent tactic ids. */
 export function parseHits(raw: string, messageText: string): TacticHit[] {
-  const json = raw.slice(raw.indexOf('{'), raw.lastIndexOf('}') + 1);
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(json);
-  } catch {
-    return [];
-  }
-  const hits = (parsed as { hits?: unknown }).hits;
-  if (!Array.isArray(hits)) return [];
+  const hits = (parseJsonObject(raw) as { hits?: unknown } | undefined)?.hits;
+  return Array.isArray(hits) ? normaliseHits(hits, messageText) : [];
+}
+
+function normaliseHits(hits: unknown[], messageText: string): TacticHit[] {
   const seen = new Set<string>();
   const out: TacticHit[] = [];
   for (const h of hits) {

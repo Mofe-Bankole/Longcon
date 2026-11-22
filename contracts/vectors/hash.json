@@ -1,0 +1,45 @@
+{
+  "secretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+  "cases": [
+    {
+      "handle": "Mark.Engineer@Example.com",
+      "normalised": "email:mark.engineer@example.com",
+      "hash": "fcea31e67034e858dc9b8d00a1b685c1152d7dac4dd1d6495660fca011cfaac8"
+    },
+    {
+      "handle": "  mark.engineer@example.com ",
+      "normalised": "email:mark.engineer@example.com",
+      "hash": "fcea31e67034e858dc9b8d00a1b685c1152d7dac4dd1d6495660fca011cfaac8"
+    },
+    {
+      "handle": "+44 7700 900123",
+      "normalised": "phone:+447700900123",
+      "hash": "7ae62fb79d78aa3002aba55c92eecb1b7ddeeb974b639e25e6631b31a9a14348"
+    },
+    {
+      "handle": "+447700900123",
+      "normalised": "phone:+447700900123",
+      "hash": "7ae62fb79d78aa3002aba55c92eecb1b7ddeeb974b639e25e6631b31a9a14348"
+    },
+    {
+      "handle": "(0803) 123-4567",
+      "normalised": "phone:08031234567",
+      "hash": "305393bfb3ad4f042598ea0c43a53b873ebdc264608cd88c03526fc49091fa33"
+    },
+    {
+      "handle": "@Eng_Mark",
+      "normalised": "handle:eng_mark",
+      "hash": "571f8014679f9a9154fa7522af615bd6f0ad2d53a6601be90eb8cb95f9891120"
+    },
+    {
+      "handle": "eng_mark",
+      "normalised": "handle:eng_mark",
+      "hash": "571f8014679f9a9154fa7522af615bd6f0ad2d53a6601be90eb8cb95f9891120"
+    },
+    {
+      "handle": "Mark Williams",
+      "normalised": "handle:mark williams",
+      "hash": "f5315bd0c3b4c3a91d82b71f8433969421d7f31215c6f4d732e4c553913b557c"
+    }
+  ]
+}

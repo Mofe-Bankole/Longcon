@@ -1,0 +1,81 @@
+[
+  {
+    "text": "God brought you into my life for a reason ❤️",
+    "tactics": [
+      "love_bombing"
+    ]
+  },
+  {
+    "text": "I'm an engineer on an oil rig in the North Sea, contract ends in 3 months",
+    "tactics": [
+      "unverifiable_persona"
+    ]
+  },
+  {
+    "text": "Add me on Telegram, I barely use this app",
+    "tactics": [
+      "move_off_platform"
+    ]
+  },
+  {
+    "text": "Don't tell your children about us yet, they won't understand",
+    "tactics": [
+      "secrecy_request"
+    ]
+  },
+  {
+    "text": "My uncle trades crypto, guaranteed returns of 30% weekly",
+    "tactics": [
+      "investment_pitch"
+    ]
+  },
+  {
+    "text": "My account was frozen, I need to pay customs fees today only",
+    "tactics": [
+      "urgency_pressure",
+      "crisis_story"
+    ]
+  },
+  {
+    "text": "Send it as USDT TRC20 to this wallet, it is faster",
+    "tactics": [
+      "risky_payment_method"
+    ]
+  },
+  {
+    "text": "Hi mum, this is my new number. My phone broke",
+    "tactics": [
+      "impersonation"
+    ]
+  },
+  {
+    "text": "Read me the 6-digit code you just got",
+    "tactics": [
+      "credential_request"
+    ]
+  },
+  {
+    "text": "Earn from home, rate products and earn $300 a day, no experience needed",
+    "tactics": [
+      "job_offer_bait"
+    ]
+  },
+  {
+    "text": "Can you send me the money by tonight? I will pay you back",
+    "tactics": [
+      "payment_request"
+    ]
+  },
+  {
+    "text": "See you at church on Sunday, bring the casserole dish!",
+    "tactics": []
+  },
+  {
+    "text": "The quarterly report is attached. Let me know your thoughts.",
+    "tactics": []
+  },
+  {
+    "text": "Happy birthday Grandma! Love you lots",
+    "tactics": []
+  }
+]

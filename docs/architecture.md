@@ -43,6 +43,11 @@
 | 3 | risk engine | After every rung | Score, level, stage of the scam arc, escalate flag |
 | 4 | `in_cloud` | Score ≥ escalation threshold (or explicit user/guardian request) | Verdict + evidence + verification questions, using Google Search grounding on a **redacted summary** |
 
+Implementation (web): `packages/core/src/router.ts`. Rules results show instantly and are *provisional*
+(their weight is multiplied by `rulesDiscount` until a model confirms them, so a rules-only contact can reach
+*warning* but not *danger*). Model calls are batched (6 messages per call), run one at a time with the riskiest
+contact first, and are cached by message id. **Danger requires an extraction-stage sign** (money or codes).
+
 ### 2.3 Android background design (settled)
 On-device Gemini Nano on Android runs **only when the app is the top foreground app**. Background
 workers and foreground services get `BACKGROUND_USE_BLOCKED`. So:

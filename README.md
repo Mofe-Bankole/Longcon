@@ -20,11 +20,14 @@ first friendliness, then secrecy, then urgency, then "send USDT". Longcon watche
 ## Repo layout
 
 ```
-packages/core     tactics, risk engine, redaction, Firebase AI Logic models (shared)
+contracts/        tactics.json + golden test vectors shared by TypeScript and Kotlin
+packages/core     router (privacy ladder), rules prefilter, risk engine, redaction, contact hashing, Firebase AI Logic models
+packages/ui       design tokens, the Arc, route badges (see docs/design.md)
 apps/extension    Chrome MV3 extension (side panel; WhatsApp Web + Gmail adapters)
 apps/web          hosted site: demo inbox, guardian dashboard
 scripts/          nano-vm.sh: Google Cloud VM that can run Gemini Nano
-docs/             setup guides
+apps/android      Kotlin app (notification listener, Nano tagger, household)
+docs/             architecture, design, setup guides
 ```
 
 ## Run it

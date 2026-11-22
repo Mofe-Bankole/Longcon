@@ -1,0 +1,130 @@
+{
+  "$comment": "Source of truth for TS and Kotlin. Rules patterns must be portable (JS + java.util.regex): no lookbehind, no named groups. Matched case-insensitively. Remote Config may override weights, riskConfig and thresholds at runtime.",
+  "version": 1,
+  "stages": ["rapport", "isolation", "hook", "extraction"],
+  "stageLabels": {
+    "rapport": "Getting close",
+    "isolation": "Cutting you off",
+    "hook": "The story",
+    "extraction": "Asking for money"
+  },
+  "riskConfig": {
+    "escalateAt": 60,
+    "checkAt": 35,
+    "levels": { "watch": 20, "warning": 45, "danger": 70 },
+    "progressionBonus": 0.35,
+    "repeatFactor": 0.25,
+    "rulesDiscount": 0.6,
+    "saturation": 1.4
+  },
+  "tactics": [
+    {
+      "id": "love_bombing",
+      "stage": "rapport",
+      "weight": 0.15,
+      "label": "Fast intimacy",
+      "plain": "Very loving words, very soon",
+      "definition": "Unusually fast affection, flattery or talk of destiny/soulmates with someone they barely know.",
+      "rules": ["\\bsoul ?mate\\b", "\\bgod (brought|sent) you\\b", "\\bdestiny\\b", "\\bmy (queen|king|love|darling)\\b", "\\bnever felt this way\\b"]
+    },
+    {
+      "id": "unverifiable_persona",
+      "stage": "rapport",
+      "weight": 0.2,
+      "label": "Unverifiable persona",
+      "plain": "A life far away that is hard to check",
+      "definition": "Claims a hard-to-verify life far away: oil rig, military deployment, doctor abroad, ship engineer, widowed expat.",
+      "rules": ["\\boil ?rig\\b", "\\boffshore\\b", "\\b(deployed|deployment|peacekeeping)\\b", "\\bun (doctor|mission)\\b", "\\bwidow(ed|er)\\b", "\\bcontract (in|on) (syria|yemen|the north sea)\\b"]
+    },
+    {
+      "id": "move_off_platform",
+      "stage": "isolation",
+      "weight": 0.3,
+      "label": "Moved to another app",
+      "plain": "Asked to talk on a different app",
+      "definition": "Asks to continue on another app or channel (Telegram, WhatsApp, Signal, private email, a trading app chat).",
+      "rules": ["\\b(add|text|message|reach|find) me on (telegram|whatsapp|signal|hangouts|wechat|line)\\b", "\\bmy (telegram|whatsapp|signal) (is|handle|number)\\b", "\\b(t\\.me|wa\\.me)/", "\\blet'?s (talk|chat|move) (on|to) (telegram|whatsapp|signal)\\b"]
+    },
+    {
+      "id": "secrecy_request",
+      "stage": "isolation",
+      "weight": 0.45,
+      "label": "Asked for secrecy",
+      "plain": "Asked you to keep it secret",
+      "definition": "Asks them not to tell family, friends or the bank, or to keep the relationship/opportunity private.",
+      "rules": ["\\bdon'?t tell (anyone|your|the bank|family)\\b", "\\bkeep (this|it|us) (between us|secret|private)\\b", "\\bour (little )?secret\\b", "\\bthey (won'?t|wouldn'?t) understand\\b", "\\bno ?one (needs|has) to know\\b"]
+    },
+    {
+      "id": "urgency_pressure",
+      "stage": "hook",
+      "weight": 0.3,
+      "label": "Pressure / urgency",
+      "plain": "Rushing you to act now",
+      "definition": "Artificial deadlines, threats, guilt, or \"act now or lose out\".",
+      "rules": ["\\b(right now|immediately|urgently|as soon as possible|asap)\\b", "\\bwithin (24|48) hours\\b", "\\b(today|tonight) only\\b", "\\bbefore it'?s too late\\b", "\\bif you (really )?(love|cared? about) me\\b"]
+    },
+    {
+      "id": "investment_pitch",
+      "stage": "hook",
+      "weight": 0.45,
+      "label": "Investment pitch",
+      "plain": "Talked about a money-making investment",
+      "definition": "Promotes crypto, forex or a trading platform with guaranteed, insider or unusually high returns.",
+      "rules": ["\\bguaranteed (profit|returns?)\\b", "\\b\\d{2,3} ?% (profit|returns?|weekly|monthly)\\b", "\\b(forex|crypto|bitcoin|usdt|mining) (platform|investment|trading)\\b", "\\btrading (platform|app|account)\\b", "\\bmy (uncle|mentor|cousin) (trades|is a trader)\\b"]
+    },
+    {
+      "id": "crisis_story",
+      "stage": "hook",
+      "weight": 0.4,
+      "label": "Crisis story",
+      "plain": "A sudden emergency",
+      "definition": "A sudden emergency needing money: medical bill, customs fee, frozen account, stuck abroad, legal trouble.",
+      "rules": ["\\bcustoms (fee|charges?|clearance)\\b", "\\b(account|card) (is |was |has been )?(frozen|blocked|suspended)\\b", "\\bhospital (bill|fees?)\\b", "\\bstuck (at|in) (the )?(airport|customs|abroad)\\b", "\\b(bail|lawyer|legal) (fee|money)\\b"]
+    },
+    {
+      "id": "job_offer_bait",
+      "stage": "hook",
+      "weight": 0.35,
+      "label": "Too-good job offer",
+      "plain": "A job that seems too good to be true",
+      "definition": "Easy high-paying job, task-based pay, or a role that needs an upfront fee, equipment purchase or deposit.",
+      "rules": ["\\b(work|earn) from home\\b.*\\b\\$?\\d{3,}\\b", "\\b(rate|like|review) (videos|products|apps) (for|and earn)\\b", "\\b(training|registration|equipment|starter) (fee|kit|deposit)\\b", "\\bno (experience|interview) (needed|required)\\b"]
+    },
+    {
+      "id": "impersonation",
+      "stage": "hook",
+      "weight": 0.5,
+      "label": "Impersonation",
+      "plain": "Pretending to be family, a bank or an official",
+      "definition": "Claims to be a relative on a new number, a bank, a government agency, or a well-known company or person.",
+      "rules": ["\\b(this is my|it'?s me,? this is my|i got a) new number\\b", "\\b(hi|hello) (mum|mom|dad)\\b.*\\bnew (number|phone)\\b", "\\b(from|calling from) (your bank|the irs|hmrc|the police|efcc|fraud department)\\b"]
+    },
+    {
+      "id": "payment_request",
+      "stage": "extraction",
+      "weight": 0.6,
+      "label": "Asked for money",
+      "plain": "Asked you to send money",
+      "definition": "Directly asks them to send, deposit, lend or \"invest\" money.",
+      "rules": ["\\b(send|transfer|lend|wire|deposit) (me |us )?(the |some )?(money|funds|\\$|£|€|₦|\\d)", "\\bcan you (help|assist) (me )?with (the )?(fee|payment|money)\\b", "\\bi'?ll (pay|refund) you back\\b"]
+    },
+    {
+      "id": "risky_payment_method",
+      "stage": "extraction",
+      "weight": 0.7,
+      "label": "Untraceable payment",
+      "plain": "Wants a payment that can't be undone",
+      "definition": "Asks for crypto (USDT, BTC), gift cards, wire transfer, P2P to a stranger, or cash courier.",
+      "rules": ["\\b(usdt|btc|bitcoin|tether|crypto ?wallet)\\b", "\\b(gift ?cards?|itunes|steam card|google play card)\\b", "\\bwestern union\\b|\\bmoneygram\\b", "\\b(trc|erc)-?20\\b", "\\bcash (courier|pickup)\\b"]
+    },
+    {
+      "id": "credential_request",
+      "stage": "extraction",
+      "weight": 0.7,
+      "label": "Asked for codes",
+      "plain": "Asked for a code or password",
+      "definition": "Asks for an OTP, verification code, password, PIN, seed phrase or remote access to a device.",
+      "rules": ["\\b(send|tell|give|read) me (the |your )?(code|otp|pin|password)\\b", "\\b(otp|verification code|6.digit code)\\b", "\\bseed phrase\\b|\\brecovery phrase\\b", "\\b(anydesk|teamviewer|remote access)\\b"]
+    }
+  ]
+}
