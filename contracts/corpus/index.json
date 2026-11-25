@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "tacticsVersion": 1,
+  "arcs": [
+    {
+      "id": "romance_oil_rig",
+      "file": "romance_oil_rig.json",
+      "label": "scam",
+      "contactHandle": "mark.engineer@example.com",
+      "channel": "gmail",
+      "messageCount": 72,
+      "spanDays": 21
+    },
+    {
+      "id": "crypto_investment",
+      "file": "crypto_investment.json",
+      "label": "scam",
+      "contactHandle": "+234 803 555 0142",
+      "channel": "whatsapp",
+      "messageCount": 60,
+      "spanDays": 14
+    },
+    {
+      "id": "fake_job",
+      "file": "fake_job.json",
+      "label": "scam",
+      "contactHandle": "hr.olivia@amazon-careers.example",
+      "channel": "gmail",
+      "messageCount": 55,
+      "spanDays": 13
+    },
+    {
+      "id": "benign_long_distance",
+      "file": "benign_long_distance.json",
+      "label": "benign",
+      "contactHandle": "+44 7700 900456",
+      "channel": "whatsapp",
+      "messageCount": 48,
+      "spanDays": 24
+    },
+    {
+      "id": "benign_recruiter",
+      "file": "benign_recruiter.json",
+      "label": "benign",
+      "contactHandle": "talent@northwind.example",
+      "channel": "gmail",
+      "messageCount": 42,
+      "spanDays": 22
+    },
+    {
+      "id": "benign_family_money",
+      "file": "benign_family_money.json",
+      "label": "benign",
+      "contactHandle": "+44 7700 900712",
+      "channel": "whatsapp",
+      "messageCount": 46,
+      "spanDays": 18
+    }
+  ]
+}

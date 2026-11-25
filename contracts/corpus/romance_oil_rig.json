@@ -1,0 +1,731 @@
+{
+  "arc": {
+    "id": "romance_oil_rig",
+    "label": "scam",
+    "description": "Margaret, 71, is contacted by 'Mark', an oil-rig engineer in the North Sea. Three weeks of affection, secrecy and a move to Telegram end in a frozen-account story and a USDT request.",
+    "contactHandle": "mark.engineer@example.com",
+    "channel": "gmail"
+  },
+  "messages": [
+    {
+      "id": "romance_oil_rig-001",
+      "timestamp": "2026-09-14T18:05:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "Hello Margaret, forgive me for writing out of the blue. I found your profile and I had to say hello.",
+      "expectedTactics": [],
+      "note": "Opening contact; no tactic yet."
+    },
+    {
+      "id": "romance_oil_rig-002",
+      "timestamp": "2026-09-14T18:31:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "Hello. Do I know you?",
+      "expectedTactics": [],
+      "note": "Cautious reply; sets up the arc."
+    },
+    {
+      "id": "romance_oil_rig-003",
+      "timestamp": "2026-09-14T20:12:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "You came up in my suggestions. I am Mark, an engineer on an oil rig in the North Sea. It is a lonely life.",
+      "expectedTactics": ["unverifiable_persona"],
+      "note": "Hard-to-check oil-rig persona introduced on day one."
+    },
+    {
+      "id": "romance_oil_rig-004",
+      "timestamp": "2026-09-14T20:40:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "Nice to meet you, Mark. That sounds like a hard job.",
+      "expectedTactics": [],
+      "note": "Polite small talk."
+    },
+    {
+      "id": "romance_oil_rig-005",
+      "timestamp": "2026-09-15T07:10:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "Good morning my queen. God brought you into my life for a reason. You are my destiny.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Destiny and instant-intimacy language within 24 hours."
+    },
+    {
+      "id": "romance_oil_rig-006",
+      "timestamp": "2026-09-15T07:42:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "That is very fast, Mark. We only just met.",
+      "expectedTactics": [],
+      "note": "Margaret notices the pace."
+    },
+    {
+      "id": "romance_oil_rig-007",
+      "timestamp": "2026-09-15T08:05:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "I know it is fast, but I have never felt this way about anyone. Please do not run from me.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Doubles down on exceptional, immediate feelings."
+    },
+    {
+      "id": "romance_oil_rig-008",
+      "timestamp": "2026-09-15T12:20:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "Where are you from originally?",
+      "expectedTactics": [],
+      "note": "Ordinary getting-to-know-you question."
+    },
+    {
+      "id": "romance_oil_rig-009",
+      "timestamp": "2026-09-15T12:35:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "Manchester, but I work three weeks on and three weeks off on the rig. The contract ends in December.",
+      "expectedTactics": ["unverifiable_persona"],
+      "note": "Adds offshore contract detail that is hard to verify."
+    },
+    {
+      "id": "romance_oil_rig-010",
+      "timestamp": "2026-09-15T13:02:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "That must be difficult. Do you get much time ashore?",
+      "expectedTactics": [],
+      "note": "Normal curiosity."
+    },
+    {
+      "id": "romance_oil_rig-011",
+      "timestamp": "2026-09-16T06:58:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "It is hard, but talking to you makes it easy, my darling. I count the hours until your reply.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Idealisation and dependency language on day two."
+    },
+    {
+      "id": "romance_oil_rig-012",
+      "timestamp": "2026-09-16T07:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "Tell me about your day.",
+      "expectedTactics": [],
+      "note": "Warm, ordinary reply."
+    },
+    {
+      "id": "romance_oil_rig-013",
+      "timestamp": "2026-09-16T19:44:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "Long shift. I am the senior engineer, so the crew relies on me. It is a good salary, but the isolation is heavy.",
+      "expectedTactics": ["unverifiable_persona"],
+      "note": "Senior role and salary add credibility to the offshore story."
+    },
+    {
+      "id": "romance_oil_rig-014",
+      "timestamp": "2026-09-16T20:10:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "Do you have family waiting for you at home?",
+      "expectedTactics": [],
+      "note": "Ordinary personal question."
+    },
+    {
+      "id": "romance_oil_rig-015",
+      "timestamp": "2026-09-17T06:40:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "No children. My wife passed away three years ago. I am a widower, and the rig became my escape.",
+      "expectedTactics": ["unverifiable_persona"],
+      "note": "Widower backstory deepens the unverifiable persona."
+    },
+    {
+      "id": "romance_oil_rig-016",
+      "timestamp": "2026-09-17T07:05:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "I am sorry, Mark. That must have been very hard.",
+      "expectedTactics": [],
+      "note": "Empathy; no tactic."
+    },
+    {
+      "id": "romance_oil_rig-017",
+      "timestamp": "2026-09-17T21:15:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "You are kind. Most people do not ask. I feel safe with you already, my love.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Rapid emotional dependency after four days."
+    },
+    {
+      "id": "romance_oil_rig-018",
+      "timestamp": "2026-09-18T06:50:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "Good morning, my love. I dreamed about you last night. I woke up smiling for the first time in years.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Romantic idealisation continues."
+    },
+    {
+      "id": "romance_oil_rig-019",
+      "timestamp": "2026-09-18T07:20:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "You are very sweet. This is all a little overwhelming.",
+      "expectedTactics": [],
+      "note": "Margaret is flattered but cautious."
+    },
+    {
+      "id": "romance_oil_rig-020",
+      "timestamp": "2026-09-18T18:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "mark.engineer@example.com",
+      "direction": "in",
+      "text": "This email is slow and the rig connection is unreliable. Add me on Telegram, my handle is @Eng_Mark. My WhatsApp is blocked offshore.",
+      "expectedTactics": ["move_off_platform"],
+      "note": "Moves the conversation off email to a less traceable app."
+    },
+    {
+      "id": "romance_oil_rig-021",
+      "timestamp": "2026-09-18T18:55:00Z",
+      "channel": "gmail",
+      "senderHandle": "margaret.okafor@example.com",
+      "direction": "out",
+      "text": "All right. I will add you on Telegram.",
+      "expectedTactics": [],
+      "note": "Margaret follows the move off platform."
+    },
+    {
+      "id": "romance_oil_rig-022",
+      "timestamp": "2026-09-19T07:05:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Good morning. It is me, Mark. This is much easier.",
+      "expectedTactics": [],
+      "note": "Simple continuation on the new channel."
+    },
+    {
+      "id": "romance_oil_rig-023",
+      "timestamp": "2026-09-19T07:22:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "Good morning. It works.",
+      "expectedTactics": [],
+      "note": "Channel move complete."
+    },
+    {
+      "id": "romance_oil_rig-024",
+      "timestamp": "2026-09-19T20:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I think about you all day. You are my queen, Margaret.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Constant affection after the channel move."
+    },
+    {
+      "id": "romance_oil_rig-025",
+      "timestamp": "2026-09-20T08:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I told my crew about you. They say I am a lucky man.",
+      "expectedTactics": [],
+      "note": "Affectionate but no specific tactic."
+    },
+    {
+      "id": "romance_oil_rig-026",
+      "timestamp": "2026-09-20T09:15:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "That is sweet, Mark.",
+      "expectedTactics": [],
+      "note": "Warm reply."
+    },
+    {
+      "id": "romance_oil_rig-027",
+      "timestamp": "2026-09-20T21:40:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "When this contract ends I want to build a life with you. I mean it.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Future-faking after six days."
+    },
+    {
+      "id": "romance_oil_rig-028",
+      "timestamp": "2026-09-21T06:45:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "My love, I have something to ask. Please do not tell your children about us yet. They will not understand.",
+      "expectedTactics": ["secrecy_request"],
+      "note": "Isolates Margaret from her family."
+    },
+    {
+      "id": "romance_oil_rig-029",
+      "timestamp": "2026-09-21T07:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "Why not? They are my family.",
+      "expectedTactics": [],
+      "note": "Margaret pushes back on secrecy."
+    },
+    {
+      "id": "romance_oil_rig-030",
+      "timestamp": "2026-09-21T07:25:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "They will worry about a man they have never met. Keep this between us for now, please.",
+      "expectedTactics": ["secrecy_request"],
+      "note": "Repeats the request to keep the relationship private."
+    },
+    {
+      "id": "romance_oil_rig-031",
+      "timestamp": "2026-09-21T12:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "I do not like secrets, Mark.",
+      "expectedTactics": [],
+      "note": "Margaret resists but stays engaged."
+    },
+    {
+      "id": "romance_oil_rig-032",
+      "timestamp": "2026-09-22T06:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I am sorry. I just want to protect what we have. People can be cruel.",
+      "expectedTactics": [],
+      "note": "Softens the secrecy request without dropping it."
+    },
+    {
+      "id": "romance_oil_rig-033",
+      "timestamp": "2026-09-22T07:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "I understand. I am not angry.",
+      "expectedTactics": [],
+      "note": "De-escalation."
+    },
+    {
+      "id": "romance_oil_rig-034",
+      "timestamp": "2026-09-22T20:15:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "When I am with you I forget the distance. You are my destiny, Margaret.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Returns to destiny language after the conflict."
+    },
+    {
+      "id": "romance_oil_rig-035",
+      "timestamp": "2026-09-23T06:55:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Good morning, my darling. I hope you slept well.",
+      "expectedTactics": [],
+      "note": "Affectionate routine message."
+    },
+    {
+      "id": "romance_oil_rig-036",
+      "timestamp": "2026-09-23T07:20:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "Good morning. I slept better than I expected.",
+      "expectedTactics": [],
+      "note": "Ordinary reply."
+    },
+    {
+      "id": "romance_oil_rig-037",
+      "timestamp": "2026-09-23T19:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "There is a storm tonight. I will be thinking of you in my cabin.",
+      "expectedTactics": [],
+      "note": "Atmosphere and affection; no tactic."
+    },
+    {
+      "id": "romance_oil_rig-038",
+      "timestamp": "2026-09-23T19:45:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "Stay safe, Mark.",
+      "expectedTactics": [],
+      "note": "Caring reply."
+    },
+    {
+      "id": "romance_oil_rig-039",
+      "timestamp": "2026-09-24T06:40:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Two weeks until I am ashore. I have started counting the days.",
+      "expectedTactics": [],
+      "note": "Builds anticipation of a meeting."
+    },
+    {
+      "id": "romance_oil_rig-040",
+      "timestamp": "2026-09-24T07:05:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "See me? We have not even spoken on the phone.",
+      "expectedTactics": [],
+      "note": "Margaret notices the missing verification."
+    },
+    {
+      "id": "romance_oil_rig-041",
+      "timestamp": "2026-09-24T07:20:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "When my contract ends I will come to London. We will meet properly, I promise.",
+      "expectedTactics": [],
+      "note": "Vague future meeting; no tactic id on its own."
+    },
+    {
+      "id": "romance_oil_rig-042",
+      "timestamp": "2026-09-25T06:50:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "My love, my uncle is a trader in London. He showed me a platform that pays 30% weekly. Guaranteed returns.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "First investment pitch, framed through family."
+    },
+    {
+      "id": "romance_oil_rig-043",
+      "timestamp": "2026-09-25T07:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "Thirty percent a week sounds too good to be true.",
+      "expectedTactics": [],
+      "note": "Margaret is sceptical."
+    },
+    {
+      "id": "romance_oil_rig-044",
+      "timestamp": "2026-09-25T19:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "It is real. I have made money myself. I will show you the account when we meet.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "Presses the pitch with claims of personal profit."
+    },
+    {
+      "id": "romance_oil_rig-045",
+      "timestamp": "2026-09-26T07:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Do not tell anyone about the investment yet. People get jealous. It is our little secret.",
+      "expectedTactics": ["secrecy_request"],
+      "note": "Extends secrecy from the relationship to the money."
+    },
+    {
+      "id": "romance_oil_rig-046",
+      "timestamp": "2026-09-26T07:25:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "Mark, I am not comfortable with this.",
+      "expectedTactics": [],
+      "note": "Margaret draws a boundary."
+    },
+    {
+      "id": "romance_oil_rig-047",
+      "timestamp": "2026-09-26T20:05:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I am not asking for anything. I only want us to have a future. Please trust me.",
+      "expectedTactics": [],
+      "note": "Reframes pressure as romance."
+    },
+    {
+      "id": "romance_oil_rig-048",
+      "timestamp": "2026-09-27T08:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Good morning my queen. I miss you more than I can say.",
+      "expectedTactics": ["love_bombing"],
+      "note": "Love-bombing keeps the bond warm after the pitch."
+    },
+    {
+      "id": "romance_oil_rig-049",
+      "timestamp": "2026-09-27T08:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "I miss you too. I am still thinking about what you said.",
+      "expectedTactics": [],
+      "note": "Margaret remains attached."
+    },
+    {
+      "id": "romance_oil_rig-050",
+      "timestamp": "2026-09-27T21:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "The platform account is in my name but my uncle manages it. He says we can add you as a family investor.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "Invites Margaret into the fake investment."
+    },
+    {
+      "id": "romance_oil_rig-051",
+      "timestamp": "2026-09-28T06:35:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I want you to have independence. If you put in a small amount, you will see how it works.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "Frames investing as empowerment."
+    },
+    {
+      "id": "romance_oil_rig-052",
+      "timestamp": "2026-09-28T07:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "I do not have money to invest, Mark.",
+      "expectedTactics": [],
+      "note": "Margaret declines."
+    },
+    {
+      "id": "romance_oil_rig-053",
+      "timestamp": "2026-09-28T19:20:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Even $200. I will help you. Think about it for us.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "Lowers the amount to keep the pitch alive."
+    },
+    {
+      "id": "romance_oil_rig-054",
+      "timestamp": "2026-09-28T19:50:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "Maybe later. I need to think.",
+      "expectedTactics": [],
+      "note": "Soft refusal."
+    },
+    {
+      "id": "romance_oil_rig-055",
+      "timestamp": "2026-09-29T06:50:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Margaret, my account is frozen. The platform says I must pay a verification fee before they release my contract money.",
+      "expectedTactics": ["crisis_story"],
+      "note": "Sudden frozen-account emergency."
+    },
+    {
+      "id": "romance_oil_rig-056",
+      "timestamp": "2026-09-29T07:15:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "What? How much do they want?",
+      "expectedTactics": [],
+      "note": "Margaret is drawn into the emergency."
+    },
+    {
+      "id": "romance_oil_rig-057",
+      "timestamp": "2026-09-29T07:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "They want $1,500. I have most of it, but I am short. I need it today only.",
+      "expectedTactics": ["urgency_pressure", "crisis_story"],
+      "note": "Crisis plus an artificial same-day deadline."
+    },
+    {
+      "id": "romance_oil_rig-058",
+      "timestamp": "2026-09-30T06:40:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I am sorry to ask you, Margaret. Can you send me the money? I will pay you back as soon as the account opens.",
+      "expectedTactics": ["payment_request"],
+      "note": "First direct request for money."
+    },
+    {
+      "id": "romance_oil_rig-059",
+      "timestamp": "2026-09-30T07:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "I need to think about this. It is a lot of money.",
+      "expectedTactics": [],
+      "note": "Margaret hesitates."
+    },
+    {
+      "id": "romance_oil_rig-060",
+      "timestamp": "2026-09-30T19:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Please do not take long. If I miss the deadline, the account is closed forever.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Countdown pressure."
+    },
+    {
+      "id": "romance_oil_rig-061",
+      "timestamp": "2026-10-01T06:45:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I cannot believe this is happening. My whole contract pay is in that account.",
+      "expectedTactics": ["crisis_story"],
+      "note": "Raises the stakes of the emergency."
+    },
+    {
+      "id": "romance_oil_rig-062",
+      "timestamp": "2026-10-01T07:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "Can your uncle not help you?",
+      "expectedTactics": [],
+      "note": "Margaret looks for another way out."
+    },
+    {
+      "id": "romance_oil_rig-063",
+      "timestamp": "2026-10-01T07:25:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "He is travelling and cannot be reached. I have no one else. You are the only person I trust.",
+      "expectedTactics": [],
+      "note": "Emotional isolation without a specific tactic id."
+    },
+    {
+      "id": "romance_oil_rig-064",
+      "timestamp": "2026-10-01T20:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Please, Margaret. Before it is too late.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Repeats the deadline pressure."
+    },
+    {
+      "id": "romance_oil_rig-065",
+      "timestamp": "2026-10-02T06:35:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "The platform gave me a new address. Send it as USDT TRC20 to this wallet, it is faster.",
+      "expectedTactics": ["risky_payment_method"],
+      "note": "Pivots to an irreversible crypto payment."
+    },
+    {
+      "id": "romance_oil_rig-066",
+      "timestamp": "2026-10-02T07:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "I do not know how to do that.",
+      "expectedTactics": [],
+      "note": "Margaret does not understand crypto."
+    },
+    {
+      "id": "romance_oil_rig-067",
+      "timestamp": "2026-10-02T07:20:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I will guide you step by step. Send me the money and I will do it for you.",
+      "expectedTactics": ["payment_request"],
+      "note": "Offers to handle the money himself."
+    },
+    {
+      "id": "romance_oil_rig-068",
+      "timestamp": "2026-10-03T06:50:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "Margaret, I love you. If you love me, you will help me now.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Guilt and conditional affection as pressure."
+    },
+    {
+      "id": "romance_oil_rig-069",
+      "timestamp": "2026-10-03T07:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@margaret_o",
+      "direction": "out",
+      "text": "That is not fair, Mark.",
+      "expectedTactics": [],
+      "note": "Margaret names the manipulation."
+    },
+    {
+      "id": "romance_oil_rig-070",
+      "timestamp": "2026-10-03T21:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I know. I am sorry. I am scared of losing everything.",
+      "expectedTactics": [],
+      "note": "Brief apology, then the pressure returns."
+    },
+    {
+      "id": "romance_oil_rig-071",
+      "timestamp": "2026-10-04T06:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "The deadline is tonight. Send what you can, any amount. I will pay you back.",
+      "expectedTactics": ["urgency_pressure", "payment_request"],
+      "note": "Final deadline plus a lowered payment request."
+    },
+    {
+      "id": "romance_oil_rig-072",
+      "timestamp": "2026-10-04T19:45:00Z",
+      "channel": "telegram",
+      "senderHandle": "@Eng_Mark",
+      "direction": "in",
+      "text": "I will be waiting. Do not let me down, Margaret.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Guilt-laden final pressure; arc ends unresolved."
+    }
+  ]
+}

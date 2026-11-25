@@ -1,0 +1,471 @@
+{
+  "arc": {
+    "id": "benign_family_money",
+    "label": "benign",
+    "description": "Amaka asks her brother Daniel for a short loan when her car fails its MOT. A normal family conversation: birthdays, the garage quote, a bank transfer between siblings, a repayment plan and no pressure. The only expected tactic is the genuine request for money.",
+    "contactHandle": "+44 7700 900712",
+    "channel": "whatsapp"
+  },
+  "messages": [
+    {
+      "id": "benign_family_money-001",
+      "timestamp": "2026-10-01T08:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Morning Dan. Are you still coming for Mum's birthday on the 12th?",
+      "expectedTactics": [],
+      "note": "Family logistics."
+    },
+    {
+      "id": "benign_family_money-002",
+      "timestamp": "2026-10-01T08:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Yes, I booked the train last night. I will bring the cake.",
+      "expectedTactics": [],
+      "note": "Ordinary reply."
+    },
+    {
+      "id": "benign_family_money-003",
+      "timestamp": "2026-10-01T08:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "She will be pleased. She keeps asking whether you are bringing anyone.",
+      "expectedTactics": [],
+      "note": "Family teasing."
+    },
+    {
+      "id": "benign_family_money-004",
+      "timestamp": "2026-10-01T09:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Tell her no, and that I am bringing wine instead.",
+      "expectedTactics": [],
+      "note": "Humour."
+    },
+    {
+      "id": "benign_family_money-005",
+      "timestamp": "2026-10-02T17:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "The car failed its MOT. The garage says the rear brakes and a suspension arm need doing.",
+      "expectedTactics": [],
+      "note": "A real problem, stated plainly."
+    },
+    {
+      "id": "benign_family_money-006",
+      "timestamp": "2026-10-02T17:55:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "That is annoying. How much is the quote?",
+      "expectedTactics": [],
+      "note": "Asks for details."
+    },
+    {
+      "id": "benign_family_money-007",
+      "timestamp": "2026-10-02T18:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Six hundred and twenty. I have three hundred in savings, so I am short the rest until payday.",
+      "expectedTactics": [],
+      "note": "Explains the gap honestly."
+    },
+    {
+      "id": "benign_family_money-008",
+      "timestamp": "2026-10-02T18:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "When is payday?",
+      "expectedTactics": [],
+      "note": "Gathering facts, not pressuring."
+    },
+    {
+      "id": "benign_family_money-009",
+      "timestamp": "2026-10-02T18:28:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "The 28th. I could do it after that if the garage will wait, but they want the car off the ramp by Friday.",
+      "expectedTactics": [],
+      "note": "Factual constraint, no threat."
+    },
+    {
+      "id": "benign_family_money-010",
+      "timestamp": "2026-10-02T18:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Let me look at my account tonight and see what I can do.",
+      "expectedTactics": [],
+      "note": "Considering it."
+    },
+    {
+      "id": "benign_family_money-011",
+      "timestamp": "2026-10-02T18:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Thank you. Do not put yourself out if it is tight.",
+      "expectedTactics": [],
+      "note": "Gives him an easy out."
+    },
+    {
+      "id": "benign_family_money-012",
+      "timestamp": "2026-10-02T18:55:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "It is not tight, I just need to move something. I will call you after dinner.",
+      "expectedTactics": [],
+      "note": "Normal reply."
+    },
+    {
+      "id": "benign_family_money-013",
+      "timestamp": "2026-10-02T21:10:00Z",
+      "channel": "sms",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Sorry, I missed your call. The kids were in the bath. Can we speak tomorrow morning?",
+      "expectedTactics": [],
+      "note": "Missed call, no pressure."
+    },
+    {
+      "id": "benign_family_money-014",
+      "timestamp": "2026-10-03T07:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Dan, could you lend me three hundred until the 28th? I will give it back as soon as I am paid.",
+      "expectedTactics": ["payment_request"],
+      "note": "Direct, polite family loan request."
+    },
+    {
+      "id": "benign_family_money-015",
+      "timestamp": "2026-10-03T08:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Yes, I can do that. Send me the garage's details and I will pay them directly if that is easier.",
+      "expectedTactics": [],
+      "note": "Agrees and offers a safer route."
+    },
+    {
+      "id": "benign_family_money-016",
+      "timestamp": "2026-10-03T08:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "You do not have to do that. I can send you the invoice so you can see the price.",
+      "expectedTactics": [],
+      "note": "Transparent."
+    },
+    {
+      "id": "benign_family_money-017",
+      "timestamp": "2026-10-03T08:25:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Good idea. I will transfer it once I have seen the invoice.",
+      "expectedTactics": [],
+      "note": "Conditions before paying."
+    },
+    {
+      "id": "benign_family_money-018",
+      "timestamp": "2026-10-03T09:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Here is the invoice from the garage. It has their VAT number and phone number on it.",
+      "expectedTactics": [],
+      "note": "Verifiable document."
+    },
+    {
+      "id": "benign_family_money-019",
+      "timestamp": "2026-10-03T09:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "That all looks right. I will send it now from my account ending 4417.",
+      "expectedTactics": [],
+      "note": "Daniel's own transfer."
+    },
+    {
+      "id": "benign_family_money-020",
+      "timestamp": "2026-10-03T09:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Are you able to send the three hundred today? The garage said they can start this afternoon if it clears.",
+      "expectedTactics": ["payment_request"],
+      "note": "A timing request, still ordinary."
+    },
+    {
+      "id": "benign_family_money-021",
+      "timestamp": "2026-10-03T09:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "It has gone. You should see it in a few minutes.",
+      "expectedTactics": [],
+      "note": "Confirmation."
+    },
+    {
+      "id": "benign_family_money-022",
+      "timestamp": "2026-10-03T10:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "It is here. Thank you, Dan. You have saved me a very awkward week.",
+      "expectedTactics": [],
+      "note": "Gratitude."
+    },
+    {
+      "id": "benign_family_money-023",
+      "timestamp": "2026-10-03T10:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "No trouble. Just get it done before the birthday so you can drive Mum.",
+      "expectedTactics": [],
+      "note": "Practical."
+    },
+    {
+      "id": "benign_family_money-024",
+      "timestamp": "2026-10-09T16:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "The car is back and it passed the retest. I will transfer one hundred back on Friday.",
+      "expectedTactics": [],
+      "note": "Repayment plan; outbound money direction."
+    },
+    {
+      "id": "benign_family_money-025",
+      "timestamp": "2026-10-09T16:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "There is no rush. Keep it until after the birthday.",
+      "expectedTactics": [],
+      "note": "No pressure from the lender."
+    },
+    {
+      "id": "benign_family_money-026",
+      "timestamp": "2026-10-09T17:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "I would rather clear it. I will pay you back in three bits if that is okay.",
+      "expectedTactics": [],
+      "note": "Her own plan."
+    },
+    {
+      "id": "benign_family_money-027",
+      "timestamp": "2026-10-09T17:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Whatever suits you. I am not counting.",
+      "expectedTactics": [],
+      "note": "Relaxed."
+    },
+    {
+      "id": "benign_family_money-028",
+      "timestamp": "2026-10-12T11:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Mum loved the cake. She has put the candles in a drawer to keep.",
+      "expectedTactics": [],
+      "note": "Birthday follow-up."
+    },
+    {
+      "id": "benign_family_money-029",
+      "timestamp": "2026-10-12T11:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "That is very her. I am glad it went well.",
+      "expectedTactics": [],
+      "note": "Warm reply."
+    },
+    {
+      "id": "benign_family_money-030",
+      "timestamp": "2026-10-15T18:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Dan, could you lend me £100 for two tyres, or is that too much?",
+      "expectedTactics": ["payment_request"],
+      "note": "Second genuine ask, with an easy refusal."
+    },
+    {
+      "id": "benign_family_money-031",
+      "timestamp": "2026-10-15T18:25:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "I can do fifty, not a hundred. Would that cover one tyre?",
+      "expectedTactics": [],
+      "note": "Honest counter-offer."
+    },
+    {
+      "id": "benign_family_money-032",
+      "timestamp": "2026-10-15T18:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Fifty is plenty. I will get the part-used one the garage offered.",
+      "expectedTactics": [],
+      "note": "Accepts the limit."
+    },
+    {
+      "id": "benign_family_money-033",
+      "timestamp": "2026-10-16T09:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Sent the fifty this morning. Do not worry about the rest of the first loan until November.",
+      "expectedTactics": [],
+      "note": "Adjusts the repayment timeline."
+    },
+    {
+      "id": "benign_family_money-034",
+      "timestamp": "2026-10-16T09:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "You are too good to me. I will send you the rest next month.",
+      "expectedTactics": [],
+      "note": "Repayment, not a request."
+    },
+    {
+      "id": "benign_family_money-035",
+      "timestamp": "2026-10-16T09:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Honestly, keep the last hundred. Call it a birthday present from me to the car.",
+      "expectedTactics": [],
+      "note": "Generosity."
+    },
+    {
+      "id": "benign_family_money-036",
+      "timestamp": "2026-10-16T09:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "No, I will pay it. You are saving for the house.",
+      "expectedTactics": [],
+      "note": "Refuses the gift."
+    },
+    {
+      "id": "benign_family_money-037",
+      "timestamp": "2026-10-17T13:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "By the way, Mum asked me to remind you about the shed roof before winter.",
+      "expectedTactics": [],
+      "note": "Family admin."
+    },
+    {
+      "id": "benign_family_money-038",
+      "timestamp": "2026-10-17T13:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Tell her I will come up in November and look at it. I am not climbing anything before then.",
+      "expectedTactics": [],
+      "note": "Light reply."
+    },
+    {
+      "id": "benign_family_money-039",
+      "timestamp": "2026-10-17T13:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "She will hold you to that. She has already written it on the calendar.",
+      "expectedTactics": [],
+      "note": "Humour."
+    },
+    {
+      "id": "benign_family_money-040",
+      "timestamp": "2026-10-18T08:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "I transferred the first hundred this morning. Check when you get a moment.",
+      "expectedTactics": [],
+      "note": "Repayment confirmation."
+    },
+    {
+      "id": "benign_family_money-041",
+      "timestamp": "2026-10-18T08:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "Got it, thank you. Two hundred left, no rush.",
+      "expectedTactics": [],
+      "note": "Clear, calm accounting."
+    },
+    {
+      "id": "benign_family_money-042",
+      "timestamp": "2026-10-18T08:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "I have it written down. You will have it before Christmas.",
+      "expectedTactics": [],
+      "note": "Commitment."
+    },
+    {
+      "id": "benign_family_money-043",
+      "timestamp": "2026-10-18T08:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "I know I will. Are you coming to dinner on Sunday?",
+      "expectedTactics": [],
+      "note": "Changes topic."
+    },
+    {
+      "id": "benign_family_money-044",
+      "timestamp": "2026-10-18T09:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Yes, I will bring the children. Is Nadia cooking?",
+      "expectedTactics": [],
+      "note": "Normal family plan."
+    },
+    {
+      "id": "benign_family_money-045",
+      "timestamp": "2026-10-18T09:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900233",
+      "direction": "out",
+      "text": "She is. She says bring nothing, which means bring bread.",
+      "expectedTactics": [],
+      "note": "Family joke."
+    },
+    {
+      "id": "benign_family_money-046",
+      "timestamp": "2026-10-18T09:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900712",
+      "direction": "in",
+      "text": "Understood. See you Sunday, and thank you again.",
+      "expectedTactics": [],
+      "note": "Friendly close."
+    }
+  ]
+}

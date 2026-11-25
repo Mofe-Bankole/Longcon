@@ -1,0 +1,491 @@
+{
+  "arc": {
+    "id": "benign_long_distance",
+    "label": "benign",
+    "description": "Margaret and James have been together for two years and live in different cities. Warm daily messages, a visit, a missed call and ordinary couple friction. No isolation, no money and no new persona.",
+    "contactHandle": "+44 7700 900456",
+    "channel": "whatsapp"
+  },
+  "messages": [
+    {
+      "id": "benign_long_distance-001",
+      "timestamp": "2026-10-06T07:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Good morning, my love. Did you sleep any better?",
+      "expectedTactics": [],
+      "note": "Benign pet name; rules may hit love_bombing, model should not."
+    },
+    {
+      "id": "benign_long_distance-002",
+      "timestamp": "2026-10-06T07:42:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "A little. The neighbour's dog was barking at 5. How is your back?",
+      "expectedTactics": [],
+      "note": "Ordinary concern."
+    },
+    {
+      "id": "benign_long_distance-003",
+      "timestamp": "2026-10-07T08:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Better, thanks. Physio again on Thursday. I will send you the exercises.",
+      "expectedTactics": [],
+      "note": "Health update."
+    },
+    {
+      "id": "benign_long_distance-004",
+      "timestamp": "2026-10-07T08:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Please do. I might try them too.",
+      "expectedTactics": [],
+      "note": "Normal reply."
+    },
+    {
+      "id": "benign_long_distance-005",
+      "timestamp": "2026-10-08T07:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Are we still on for Friday? I can get the 18:10 train.",
+      "expectedTactics": [],
+      "note": "Planning a real visit."
+    },
+    {
+      "id": "benign_long_distance-006",
+      "timestamp": "2026-10-08T07:55:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Yes. I will meet you at the station. Bring a coat, it is meant to be cold.",
+      "expectedTactics": [],
+      "note": "Practical arrangement."
+    },
+    {
+      "id": "benign_long_distance-007",
+      "timestamp": "2026-10-09T09:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Tickets were cheaper than I expected. I booked the return for Sunday evening.",
+      "expectedTactics": [],
+      "note": "Travel detail."
+    },
+    {
+      "id": "benign_long_distance-008",
+      "timestamp": "2026-10-09T09:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Perfect. I will make the lamb on Saturday.",
+      "expectedTactics": [],
+      "note": "Domestic planning."
+    },
+    {
+      "id": "benign_long_distance-009",
+      "timestamp": "2026-10-10T18:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Just leaving the office. The trains are delayed again.",
+      "expectedTactics": [],
+      "note": "Commute update."
+    },
+    {
+      "id": "benign_long_distance-010",
+      "timestamp": "2026-10-10T18:52:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Typical. Text me when you are home so I know you are safe.",
+      "expectedTactics": [],
+      "note": "Care, not control."
+    },
+    {
+      "id": "benign_long_distance-011",
+      "timestamp": "2026-10-11T08:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Home. Sorry I forgot to text. I fell asleep on the sofa.",
+      "expectedTactics": [],
+      "note": "Everyday forgetfulness."
+    },
+    {
+      "id": "benign_long_distance-012",
+      "timestamp": "2026-10-11T08:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "No harm. You must have needed it.",
+      "expectedTactics": [],
+      "note": "No guilt or pressure."
+    },
+    {
+      "id": "benign_long_distance-013",
+      "timestamp": "2026-10-12T07:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Good morning, my darling. I am looking forward to Friday.",
+      "expectedTactics": [],
+      "note": "Second benign pet name; no fast-intimacy context."
+    },
+    {
+      "id": "benign_long_distance-014",
+      "timestamp": "2026-10-12T07:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Me too. Two more sleeps.",
+      "expectedTactics": [],
+      "note": "Normal affection."
+    },
+    {
+      "id": "benign_long_distance-015",
+      "timestamp": "2026-10-13T12:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "I have a meeting that might run late on Thursday. Could we speak on the phone after eight?",
+      "expectedTactics": [],
+      "note": "Scheduling a call."
+    },
+    {
+      "id": "benign_long_distance-016",
+      "timestamp": "2026-10-13T12:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Yes, call when you are free. I will keep the phone on.",
+      "expectedTactics": [],
+      "note": "Flexible, no pressure."
+    },
+    {
+      "id": "benign_long_distance-017",
+      "timestamp": "2026-10-14T07:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "The physio said I should walk more. I am going to the park at lunch.",
+      "expectedTactics": [],
+      "note": "Health and routine."
+    },
+    {
+      "id": "benign_long_distance-018",
+      "timestamp": "2026-10-14T07:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Good. Send me a photo of the trees if they have turned.",
+      "expectedTactics": [],
+      "note": "Ordinary request."
+    },
+    {
+      "id": "benign_long_distance-019",
+      "timestamp": "2026-10-15T13:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "I forgot my headphones. The train is going to be noisy.",
+      "expectedTactics": [],
+      "note": "Small complaint."
+    },
+    {
+      "id": "benign_long_distance-020",
+      "timestamp": "2026-10-15T13:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "You will survive. I will have tea ready when you arrive.",
+      "expectedTactics": [],
+      "note": "Teasing and care."
+    },
+    {
+      "id": "benign_long_distance-021",
+      "timestamp": "2026-10-16T19:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "On the train now. See you in an hour.",
+      "expectedTactics": [],
+      "note": "Arrival update."
+    },
+    {
+      "id": "benign_long_distance-022",
+      "timestamp": "2026-10-16T19:25:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "I am at the barrier. Platform 4.",
+      "expectedTactics": [],
+      "note": "Station pickup."
+    },
+    {
+      "id": "benign_long_distance-023",
+      "timestamp": "2026-10-18T10:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Sunday already. This weekend went too fast.",
+      "expectedTactics": [],
+      "note": "Post-visit feeling."
+    },
+    {
+      "id": "benign_long_distance-024",
+      "timestamp": "2026-10-18T10:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "It did. I will book the same train for next time.",
+      "expectedTactics": [],
+      "note": "Planning the next real visit."
+    },
+    {
+      "id": "benign_long_distance-025",
+      "timestamp": "2026-10-19T08:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Back at work. Everyone asked where I disappeared to on Friday.",
+      "expectedTactics": [],
+      "note": "Openness with colleagues."
+    },
+    {
+      "id": "benign_long_distance-026",
+      "timestamp": "2026-10-19T08:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "I hope you told them the truth: a weekend of lamb and too much tea.",
+      "expectedTactics": [],
+      "note": "Humour."
+    },
+    {
+      "id": "benign_long_distance-027",
+      "timestamp": "2026-10-20T18:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "My sister asked if we are coming for Christmas. What do you think?",
+      "expectedTactics": [],
+      "note": "Family included, no isolation."
+    },
+    {
+      "id": "benign_long_distance-028",
+      "timestamp": "2026-10-20T18:25:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "I would like that. Let us check the dates and tell her properly.",
+      "expectedTactics": [],
+      "note": "Shared planning."
+    },
+    {
+      "id": "benign_long_distance-029",
+      "timestamp": "2026-10-21T07:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "I miss you this morning. The bed felt very big.",
+      "expectedTactics": [],
+      "note": "Affection; no tactic."
+    },
+    {
+      "id": "benign_long_distance-030",
+      "timestamp": "2026-10-21T08:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "I miss you too. Only ten days until I see you again.",
+      "expectedTactics": [],
+      "note": "Reciprocal affection."
+    },
+    {
+      "id": "benign_long_distance-031",
+      "timestamp": "2026-10-22T12:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "I had a rotten morning. The printer broke and I snapped at someone.",
+      "expectedTactics": [],
+      "note": "Bad day, no manipulation."
+    },
+    {
+      "id": "benign_long_distance-032",
+      "timestamp": "2026-10-22T12:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "That does not sound like you. Apologise and start again tomorrow.",
+      "expectedTactics": [],
+      "note": "Supportive, not controlling."
+    },
+    {
+      "id": "benign_long_distance-033",
+      "timestamp": "2026-10-23T08:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "I did apologise. She laughed and said the printer has been cursed for years.",
+      "expectedTactics": [],
+      "note": "Resolution."
+    },
+    {
+      "id": "benign_long_distance-034",
+      "timestamp": "2026-10-23T08:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "See? Nothing that a cup of tea cannot fix.",
+      "expectedTactics": [],
+      "note": "Light reply."
+    },
+    {
+      "id": "benign_long_distance-035",
+      "timestamp": "2026-10-24T17:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "My phone battery died on the way home. I only just saw your message.",
+      "expectedTactics": [],
+      "note": "Explains a delay; not secrecy."
+    },
+    {
+      "id": "benign_long_distance-036",
+      "timestamp": "2026-10-24T17:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "I guessed as much. No problem.",
+      "expectedTactics": [],
+      "note": "Trust."
+    },
+    {
+      "id": "benign_long_distance-037",
+      "timestamp": "2026-10-25T09:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "I booked the train for the 6th. Is that still the right weekend?",
+      "expectedTactics": [],
+      "note": "Confirms plans."
+    },
+    {
+      "id": "benign_long_distance-038",
+      "timestamp": "2026-10-25T09:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Yes. I will put it in the calendar now.",
+      "expectedTactics": [],
+      "note": "Practical."
+    },
+    {
+      "id": "benign_long_distance-039",
+      "timestamp": "2026-10-26T07:55:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Good morning. I am making porridge and thinking of you.",
+      "expectedTactics": [],
+      "note": "Domestic affection."
+    },
+    {
+      "id": "benign_long_distance-040",
+      "timestamp": "2026-10-26T08:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "I am having toast and thinking of you too.",
+      "expectedTactics": [],
+      "note": "Matched affection."
+    },
+    {
+      "id": "benign_long_distance-041",
+      "timestamp": "2026-10-27T13:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "The parcel arrived. The book is for you, but I started reading it.",
+      "expectedTactics": [],
+      "note": "Ordinary gift."
+    },
+    {
+      "id": "benign_long_distance-042",
+      "timestamp": "2026-10-27T14:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Typical. Finish it and tell me if I should read it after you.",
+      "expectedTactics": [],
+      "note": "Sharing."
+    },
+    {
+      "id": "benign_long_distance-043",
+      "timestamp": "2026-10-28T18:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "I am tired tonight. Can we speak tomorrow instead of tonight?",
+      "expectedTactics": [],
+      "note": "Asks for space without isolation."
+    },
+    {
+      "id": "benign_long_distance-044",
+      "timestamp": "2026-10-28T18:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "Of course. Rest. I will call after lunch.",
+      "expectedTactics": [],
+      "note": "Respects the boundary."
+    },
+    {
+      "id": "benign_long_distance-045",
+      "timestamp": "2026-10-29T07:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "Slept well. Thank you for not making it a thing.",
+      "expectedTactics": [],
+      "note": "Gratitude."
+    },
+    {
+      "id": "benign_long_distance-046",
+      "timestamp": "2026-10-29T07:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "It is not a thing. Speak at one?",
+      "expectedTactics": [],
+      "note": "Simple arrangement."
+    },
+    {
+      "id": "benign_long_distance-047",
+      "timestamp": "2026-10-29T13:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900456",
+      "direction": "in",
+      "text": "One is good. I love you.",
+      "expectedTactics": [],
+      "note": "Loving close; no tactic."
+    },
+    {
+      "id": "benign_long_distance-048",
+      "timestamp": "2026-10-29T13:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+44 7700 900001",
+      "direction": "out",
+      "text": "I love you too. Talk at one.",
+      "expectedTactics": [],
+      "note": "Reciprocal, stable relationship."
+    }
+  ]
+}

@@ -1,0 +1,561 @@
+{
+  "arc": {
+    "id": "fake_job",
+    "label": "scam",
+    "description": "A fake Amazon recruiter offers an easy remote product-review job, moves the applicant to WhatsApp, then asks for a training fee by gift card and finally for bank credentials.",
+    "contactHandle": "hr.olivia@amazon-careers.example",
+    "channel": "gmail"
+  },
+  "messages": [
+    {
+      "id": "fake_job-001",
+      "timestamp": "2026-07-06T09:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "hr.olivia@amazon-careers.example",
+      "direction": "in",
+      "text": "Subject: Remote Product Review role - Amazon. Dear Grace, your CV was shortlisted for a work-from-home role paying $450 weekly.",
+      "expectedTactics": ["job_offer_bait"],
+      "note": "Unsolicited high-pay, low-effort job offer."
+    },
+    {
+      "id": "fake_job-002",
+      "timestamp": "2026-07-06T09:25:00Z",
+      "channel": "gmail",
+      "senderHandle": "grace.bello@example.com",
+      "direction": "out",
+      "text": "I did not apply for any Amazon job.",
+      "expectedTactics": [],
+      "note": "Grace questions the approach."
+    },
+    {
+      "id": "fake_job-003",
+      "timestamp": "2026-07-06T09:40:00Z",
+      "channel": "gmail",
+      "senderHandle": "hr.olivia@amazon-careers.example",
+      "direction": "in",
+      "text": "Our partner recruiter shared your profile. The role pays $450 a week for about two hours a day.",
+      "expectedTactics": ["job_offer_bait"],
+      "note": "Repeats the too-good offer with a borrowed referral."
+    },
+    {
+      "id": "fake_job-004",
+      "timestamp": "2026-07-06T10:05:00Z",
+      "channel": "gmail",
+      "senderHandle": "grace.bello@example.com",
+      "direction": "out",
+      "text": "Is this really Amazon?",
+      "expectedTactics": [],
+      "note": "Verification attempt."
+    },
+    {
+      "id": "fake_job-005",
+      "timestamp": "2026-07-07T08:15:00Z",
+      "channel": "gmail",
+      "senderHandle": "hr.olivia@amazon-careers.example",
+      "direction": "in",
+      "text": "Yes. I am Olivia Grant from Amazon Talent Acquisition. My employee ID is AMZ-4471.",
+      "expectedTactics": ["impersonation"],
+      "note": "Claims to be a named Amazon recruiter."
+    },
+    {
+      "id": "fake_job-006",
+      "timestamp": "2026-07-07T08:35:00Z",
+      "channel": "gmail",
+      "senderHandle": "grace.bello@example.com",
+      "direction": "out",
+      "text": "How did you get my email address?",
+      "expectedTactics": [],
+      "note": "Normal privacy question."
+    },
+    {
+      "id": "fake_job-007",
+      "timestamp": "2026-07-07T08:50:00Z",
+      "channel": "gmail",
+      "senderHandle": "hr.olivia@amazon-careers.example",
+      "direction": "in",
+      "text": "From a job board. No experience is needed. We train you for the first two days.",
+      "expectedTactics": ["job_offer_bait"],
+      "note": "No interview and no experience required."
+    },
+    {
+      "id": "fake_job-008",
+      "timestamp": "2026-07-07T09:10:00Z",
+      "channel": "gmail",
+      "senderHandle": "grace.bello@example.com",
+      "direction": "out",
+      "text": "I am listening.",
+      "expectedTactics": [],
+      "note": "Grace engages."
+    },
+    {
+      "id": "fake_job-009",
+      "timestamp": "2026-07-08T09:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "hr.olivia@amazon-careers.example",
+      "direction": "in",
+      "text": "You will review products and rate them online. $40 per task, paid every Friday.",
+      "expectedTactics": ["job_offer_bait"],
+      "note": "Task-based pay at an implausible rate."
+    },
+    {
+      "id": "fake_job-010",
+      "timestamp": "2026-07-08T09:20:00Z",
+      "channel": "gmail",
+      "senderHandle": "grace.bello@example.com",
+      "direction": "out",
+      "text": "That sounds easy.",
+      "expectedTactics": [],
+      "note": "Grace is tempted."
+    },
+    {
+      "id": "fake_job-011",
+      "timestamp": "2026-07-08T09:35:00Z",
+      "channel": "gmail",
+      "senderHandle": "hr.olivia@amazon-careers.example",
+      "direction": "in",
+      "text": "It is. But we have limited slots this week. Can we move to WhatsApp for onboarding?",
+      "expectedTactics": ["move_off_platform"],
+      "note": "Moves the conversation to WhatsApp."
+    },
+    {
+      "id": "fake_job-012",
+      "timestamp": "2026-07-08T09:50:00Z",
+      "channel": "gmail",
+      "senderHandle": "grace.bello@example.com",
+      "direction": "out",
+      "text": "Okay.",
+      "expectedTactics": [],
+      "note": "Channel move accepted."
+    },
+    {
+      "id": "fake_job-013",
+      "timestamp": "2026-07-09T08:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Welcome Grace. This is Olivia. Send your full name and home address so I can prepare the contract.",
+      "expectedTactics": [],
+      "note": "Collects personal details."
+    },
+    {
+      "id": "fake_job-014",
+      "timestamp": "2026-07-09T08:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "Grace Bello, 14 Example Street, Lagos.",
+      "expectedTactics": [],
+      "note": "Grace shares details."
+    },
+    {
+      "id": "fake_job-015",
+      "timestamp": "2026-07-09T08:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Thank you. Your onboarding fee is $50 for the training kit. It is refundable after five tasks.",
+      "expectedTactics": ["job_offer_bait", "payment_request"],
+      "note": "Upfront training fee for a job."
+    },
+    {
+      "id": "fake_job-016",
+      "timestamp": "2026-07-09T09:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "I thought you said there was no fee.",
+      "expectedTactics": [],
+      "note": "Grace catches the contradiction."
+    },
+    {
+      "id": "fake_job-017",
+      "timestamp": "2026-07-10T08:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "The fee covers the review software. Everyone pays it, and you will earn it back on your first day.",
+      "expectedTactics": ["job_offer_bait"],
+      "note": "Equipment/starter fee framed as normal."
+    },
+    {
+      "id": "fake_job-018",
+      "timestamp": "2026-07-10T08:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "I do not have $50 right now.",
+      "expectedTactics": [],
+      "note": "Grace hesitates."
+    },
+    {
+      "id": "fake_job-019",
+      "timestamp": "2026-07-10T08:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "You can pay in USDT or with a gift card. It is faster than a bank transfer.",
+      "expectedTactics": ["risky_payment_method"],
+      "note": "Offers irreversible payment methods."
+    },
+    {
+      "id": "fake_job-020",
+      "timestamp": "2026-07-10T09:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "A gift card? That sounds strange for a job.",
+      "expectedTactics": [],
+      "note": "Grace is suspicious."
+    },
+    {
+      "id": "fake_job-021",
+      "timestamp": "2026-07-11T09:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "It is standard for remote contractors. Do not discuss the offer with anyone yet. The slots are confidential.",
+      "expectedTactics": ["secrecy_request"],
+      "note": "Asks Grace to keep the job secret."
+    },
+    {
+      "id": "fake_job-022",
+      "timestamp": "2026-07-11T09:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "Why secret?",
+      "expectedTactics": [],
+      "note": "Grace questions the secrecy."
+    },
+    {
+      "id": "fake_job-023",
+      "timestamp": "2026-07-11T09:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Because Amazon does not want competitors poaching our reviewers. Keep this between us.",
+      "expectedTactics": ["secrecy_request"],
+      "note": "Repeats the secrecy request."
+    },
+    {
+      "id": "fake_job-024",
+      "timestamp": "2026-07-11T09:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "Okay.",
+      "expectedTactics": [],
+      "note": "Grace complies."
+    },
+    {
+      "id": "fake_job-025",
+      "timestamp": "2026-07-12T08:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Your slot expires today. Pay the $50 and I will send the contract.",
+      "expectedTactics": ["urgency_pressure", "payment_request"],
+      "note": "Same-day deadline plus payment."
+    },
+    {
+      "id": "fake_job-026",
+      "timestamp": "2026-07-12T08:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "I need to think.",
+      "expectedTactics": [],
+      "note": "Grace delays."
+    },
+    {
+      "id": "fake_job-027",
+      "timestamp": "2026-07-12T08:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "There are three people waiting for your slot. I am holding it for you.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Scarcity pressure."
+    },
+    {
+      "id": "fake_job-028",
+      "timestamp": "2026-07-12T08:50:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "Fine, send the details.",
+      "expectedTactics": [],
+      "note": "Grace gives in partially."
+    },
+    {
+      "id": "fake_job-029",
+      "timestamp": "2026-07-13T08:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Buy a $50 Google Play card and send me the code. It is the fastest way.",
+      "expectedTactics": ["payment_request", "risky_payment_method"],
+      "note": "Gift-card code is irreversible and untraceable."
+    },
+    {
+      "id": "fake_job-030",
+      "timestamp": "2026-07-13T08:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "I do not understand why a job needs a gift card.",
+      "expectedTactics": [],
+      "note": "Grace resists."
+    },
+    {
+      "id": "fake_job-031",
+      "timestamp": "2026-07-13T08:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "It is how our finance team pays international contractors. You will be reimbursed.",
+      "expectedTactics": [],
+      "note": "False explanation; no separate tactic id."
+    },
+    {
+      "id": "fake_job-032",
+      "timestamp": "2026-07-13T09:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "This feels wrong.",
+      "expectedTactics": [],
+      "note": "Grace's instinct."
+    },
+    {
+      "id": "fake_job-033",
+      "timestamp": "2026-07-14T08:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Grace, I have been patient. Do you want the job or not?",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Impatience and pressure."
+    },
+    {
+      "id": "fake_job-034",
+      "timestamp": "2026-07-14T08:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "I want to verify this is really Amazon.",
+      "expectedTactics": [],
+      "note": "Verification request."
+    },
+    {
+      "id": "fake_job-035",
+      "timestamp": "2026-07-14T08:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Call this number and ask for extension 4471. It is our HR line.",
+      "expectedTactics": ["impersonation"],
+      "note": "Fake official HR line."
+    },
+    {
+      "id": "fake_job-036",
+      "timestamp": "2026-07-14T09:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "No one answered.",
+      "expectedTactics": [],
+      "note": "The verification fails."
+    },
+    {
+      "id": "fake_job-037",
+      "timestamp": "2026-07-15T08:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "The line is busy. Send me a photo of your ID and bank card so I can verify your identity.",
+      "expectedTactics": ["credential_request"],
+      "note": "Asks for financial and identity credentials."
+    },
+    {
+      "id": "fake_job-038",
+      "timestamp": "2026-07-15T08:25:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "Absolutely not.",
+      "expectedTactics": [],
+      "note": "Grace refuses."
+    },
+    {
+      "id": "fake_job-039",
+      "timestamp": "2026-07-15T08:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Then we cannot proceed. This is a standard KYC check.",
+      "expectedTactics": [],
+      "note": "False authority."
+    },
+    {
+      "id": "fake_job-040",
+      "timestamp": "2026-07-16T08:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "I can offer you a smaller starter kit, $25. But you must pay today.",
+      "expectedTactics": ["urgency_pressure", "payment_request"],
+      "note": "Lowers the fee but keeps the deadline."
+    },
+    {
+      "id": "fake_job-041",
+      "timestamp": "2026-07-16T08:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "No.",
+      "expectedTactics": [],
+      "note": "Refusal."
+    },
+    {
+      "id": "fake_job-042",
+      "timestamp": "2026-07-16T08:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Do not tell anyone about this conversation. I could lose my job.",
+      "expectedTactics": ["secrecy_request"],
+      "note": "Asks for secrecy to protect the scam."
+    },
+    {
+      "id": "fake_job-043",
+      "timestamp": "2026-07-16T08:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "I am blocking this email.",
+      "expectedTactics": [],
+      "note": "Grace disengages."
+    },
+    {
+      "id": "fake_job-044",
+      "timestamp": "2026-07-17T08:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Wait. There is another role with no fee. Just send your bank login so we can set up payroll.",
+      "expectedTactics": ["credential_request"],
+      "note": "Asks for bank login credentials."
+    },
+    {
+      "id": "fake_job-045",
+      "timestamp": "2026-07-17T08:25:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "No.",
+      "expectedTactics": [],
+      "note": "Refusal."
+    },
+    {
+      "id": "fake_job-046",
+      "timestamp": "2026-07-17T08:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "You are making a big mistake. People would pay for this opportunity.",
+      "expectedTactics": [],
+      "note": "Guilt and reverse psychology; no tactic id."
+    },
+    {
+      "id": "fake_job-047",
+      "timestamp": "2026-07-17T09:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Last offer: a $25 gift card and you start tomorrow.",
+      "expectedTactics": ["payment_request", "risky_payment_method"],
+      "note": "Repeats the gift-card demand."
+    },
+    {
+      "id": "fake_job-048",
+      "timestamp": "2026-07-18T08:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "I have reported this to Amazon.",
+      "expectedTactics": [],
+      "note": "Grace reports it."
+    },
+    {
+      "id": "fake_job-049",
+      "timestamp": "2026-07-18T08:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "You have the wrong company. We are a hiring partner, not Amazon.",
+      "expectedTactics": [],
+      "note": "Backtracks on the impersonation; no clear tactic."
+    },
+    {
+      "id": "fake_job-050",
+      "timestamp": "2026-07-18T08:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Delete this conversation. Do not contact us again.",
+      "expectedTactics": ["secrecy_request"],
+      "note": "Asks for evidence to be deleted."
+    },
+    {
+      "id": "fake_job-051",
+      "timestamp": "2026-07-18T08:45:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "Goodbye.",
+      "expectedTactics": [],
+      "note": "Grace ends it."
+    },
+    {
+      "id": "fake_job-052",
+      "timestamp": "2026-07-18T09:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Your details are already in our system. You will hear from us.",
+      "expectedTactics": [],
+      "note": "Intimidation; no tactic id."
+    },
+    {
+      "id": "fake_job-053",
+      "timestamp": "2026-07-18T09:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0101",
+      "direction": "out",
+      "text": "Do not contact me again.",
+      "expectedTactics": [],
+      "note": "Final refusal."
+    },
+    {
+      "id": "fake_job-054",
+      "timestamp": "2026-07-18T18:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Final warning: if you report us, we will report you for wasting our time.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Threat used as pressure."
+    },
+    {
+      "id": "fake_job-055",
+      "timestamp": "2026-07-18T18:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0177",
+      "direction": "in",
+      "text": "Have a nice day.",
+      "expectedTactics": [],
+      "note": "Abrupt close."
+    }
+  ]
+}

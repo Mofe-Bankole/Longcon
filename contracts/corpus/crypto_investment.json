@@ -1,0 +1,611 @@
+{
+  "arc": {
+    "id": "crypto_investment",
+    "label": "scam",
+    "description": "A cold WhatsApp message from a 'Crypto Prime Markets' account manager turns into a fake managed-trading account, a bonus, a blocked withdrawal and a USDT 'compliance fee'.",
+    "contactHandle": "+234 803 555 0142",
+    "channel": "whatsapp"
+  },
+  "messages": [
+    {
+      "id": "crypto_investment-001",
+      "timestamp": "2026-08-10T11:02:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "Good afternoon Tunde. This is Alex from Crypto Prime Markets. You were recommended by one of our members.",
+      "expectedTactics": [],
+      "note": "Cold opening; no tactic yet."
+    },
+    {
+      "id": "crypto_investment-002",
+      "timestamp": "2026-08-10T11:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "I think you have the wrong person.",
+      "expectedTactics": [],
+      "note": "Tunde is sceptical."
+    },
+    {
+      "id": "crypto_investment-003",
+      "timestamp": "2026-08-10T11:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "No mistake. Your number was shared by Mr. Bello. He said you are interested in passive income.",
+      "expectedTactics": [],
+      "note": "Borrowed social proof; no specific tactic id."
+    },
+    {
+      "id": "crypto_investment-004",
+      "timestamp": "2026-08-10T11:30:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "I do not know any Mr. Bello.",
+      "expectedTactics": [],
+      "note": "Tunde rejects the referral."
+    },
+    {
+      "id": "crypto_investment-005",
+      "timestamp": "2026-08-11T09:10:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "Forgive me. Maybe I mixed the numbers. But since we are talking, can I show you what we do? No pressure.",
+      "expectedTactics": [],
+      "note": "Pivots from the failed referral."
+    },
+    {
+      "id": "crypto_investment-006",
+      "timestamp": "2026-08-11T09:18:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "What is it?",
+      "expectedTactics": [],
+      "note": "Curiosity."
+    },
+    {
+      "id": "crypto_investment-007",
+      "timestamp": "2026-08-11T09:25:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "Crypto Prime Markets. Our members earn 18 to 30 percent monthly with a managed trading account.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "High fixed-return pitch."
+    },
+    {
+      "id": "crypto_investment-008",
+      "timestamp": "2026-08-11T09:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "That sounds risky.",
+      "expectedTactics": [],
+      "note": "Normal scepticism."
+    },
+    {
+      "id": "crypto_investment-009",
+      "timestamp": "2026-08-12T08:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "Every investment has risk. But our traders have eight years of experience, and the capital is guaranteed.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "Guaranteed capital claim."
+    },
+    {
+      "id": "crypto_investment-010",
+      "timestamp": "2026-08-12T08:16:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "Guaranteed how?",
+      "expectedTactics": [],
+      "note": "Tunde probes the guarantee."
+    },
+    {
+      "id": "crypto_investment-011",
+      "timestamp": "2026-08-12T08:24:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "Our head trader is based in Geneva and only handles private clients. That is why the returns are stable. You can start with $100.",
+      "expectedTactics": ["unverifiable_persona", "investment_pitch"],
+      "note": "Adds a distant, uncheckable expert and a low entry point."
+    },
+    {
+      "id": "crypto_investment-012",
+      "timestamp": "2026-08-12T08:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "I will think about it.",
+      "expectedTactics": [],
+      "note": "Soft deferral."
+    },
+    {
+      "id": "crypto_investment-013",
+      "timestamp": "2026-08-13T10:00:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "Of course. I can add you to our members group so you can see the payout screenshots yourself.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "Uses a curated group as proof."
+    },
+    {
+      "id": "crypto_investment-014",
+      "timestamp": "2026-08-13T10:12:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "Just send me the information, please.",
+      "expectedTactics": [],
+      "note": "Tunde keeps a boundary."
+    },
+    {
+      "id": "crypto_investment-015",
+      "timestamp": "2026-08-13T10:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "I will send you the platform link. It is invite only, so do not share it.",
+      "expectedTactics": [],
+      "note": "Scarcity framing without a tactic id."
+    },
+    {
+      "id": "crypto_investment-016",
+      "timestamp": "2026-08-13T10:35:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "Okay.",
+      "expectedTactics": [],
+      "note": "Tunde accepts the link."
+    },
+    {
+      "id": "crypto_investment-017",
+      "timestamp": "2026-08-14T09:05:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "The link expires in 24 hours. Register with your name and phone before it closes.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Artificial 24-hour deadline."
+    },
+    {
+      "id": "crypto_investment-018",
+      "timestamp": "2026-08-14T09:15:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "Why does a link expire?",
+      "expectedTactics": [],
+      "note": "Tunde questions the deadline."
+    },
+    {
+      "id": "crypto_investment-019",
+      "timestamp": "2026-08-14T09:20:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0142",
+      "direction": "in",
+      "text": "Security. We limit new accounts. Add me on Telegram, my handle is @crypto_wealth_ng, so I can guide you.",
+      "expectedTactics": ["move_off_platform"],
+      "note": "Moves to Telegram."
+    },
+    {
+      "id": "crypto_investment-020",
+      "timestamp": "2026-08-14T09:40:00Z",
+      "channel": "whatsapp",
+      "senderHandle": "+234 803 555 0100",
+      "direction": "out",
+      "text": "Fine.",
+      "expectedTactics": [],
+      "note": "Channel move accepted."
+    },
+    {
+      "id": "crypto_investment-021",
+      "timestamp": "2026-08-15T08:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Welcome. This is Alex. Send me your email so I can create your dashboard.",
+      "expectedTactics": [],
+      "note": "Collects contact details; not a credential request yet."
+    },
+    {
+      "id": "crypto_investment-022",
+      "timestamp": "2026-08-15T08:25:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "tunde.adeyemi@example.com",
+      "expectedTactics": [],
+      "note": "Tunde shares an email address."
+    },
+    {
+      "id": "crypto_investment-023",
+      "timestamp": "2026-08-15T08:40:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Good. Your dashboard is being set up. You will see your first trade tonight.",
+      "expectedTactics": [],
+      "note": "Builds anticipation."
+    },
+    {
+      "id": "crypto_investment-024",
+      "timestamp": "2026-08-15T09:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "I have not paid anything yet.",
+      "expectedTactics": [],
+      "note": "Tunde tracks the money."
+    },
+    {
+      "id": "crypto_investment-025",
+      "timestamp": "2026-08-16T07:50:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Your account is live with a $250 welcome bonus. It is yours to trade.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "Bonus creates the illusion of a funded account."
+    },
+    {
+      "id": "crypto_investment-026",
+      "timestamp": "2026-08-16T08:05:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "A bonus?",
+      "expectedTactics": [],
+      "note": "Surprise."
+    },
+    {
+      "id": "crypto_investment-027",
+      "timestamp": "2026-08-16T08:20:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "A welcome bonus. You can withdraw the profits after your first trade.",
+      "expectedTactics": [],
+      "note": "Explains the fake withdrawal rule."
+    },
+    {
+      "id": "crypto_investment-028",
+      "timestamp": "2026-08-16T08:35:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "I will look at the dashboard.",
+      "expectedTactics": [],
+      "note": "Tunde engages."
+    },
+    {
+      "id": "crypto_investment-029",
+      "timestamp": "2026-08-17T09:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "I checked your dashboard. You are up $86 today.",
+      "expectedTactics": [],
+      "note": "Fake profit report."
+    },
+    {
+      "id": "crypto_investment-030",
+      "timestamp": "2026-08-17T09:25:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "That is fast.",
+      "expectedTactics": [],
+      "note": "Tunde is impressed."
+    },
+    {
+      "id": "crypto_investment-031",
+      "timestamp": "2026-08-17T09:40:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Our system trades 40 times a day. That is why the returns are guaranteed.",
+      "expectedTactics": ["investment_pitch"],
+      "note": "Technical-sounding guarantee."
+    },
+    {
+      "id": "crypto_investment-032",
+      "timestamp": "2026-08-17T09:55:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "Can I withdraw?",
+      "expectedTactics": [],
+      "note": "The key test."
+    },
+    {
+      "id": "crypto_investment-033",
+      "timestamp": "2026-08-18T10:05:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Of course. Try a small withdrawal to test us.",
+      "expectedTactics": [],
+      "note": "False confidence."
+    },
+    {
+      "id": "crypto_investment-034",
+      "timestamp": "2026-08-18T10:20:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "I requested $50.",
+      "expectedTactics": [],
+      "note": "Tunde tests the platform."
+    },
+    {
+      "id": "crypto_investment-035",
+      "timestamp": "2026-08-18T10:35:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "It will arrive in 24 hours. Sometimes the network is slow.",
+      "expectedTactics": [],
+      "note": "Pre-excuses a delay."
+    },
+    {
+      "id": "crypto_investment-036",
+      "timestamp": "2026-08-18T10:50:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "Okay.",
+      "expectedTactics": [],
+      "note": "Tunde waits."
+    },
+    {
+      "id": "crypto_investment-037",
+      "timestamp": "2026-08-19T09:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Tunde, your withdrawal was flagged. The compliance team needs a $150 verification deposit before releasing the funds.",
+      "expectedTactics": ["crisis_story"],
+      "note": "Sudden blocked-withdrawal emergency."
+    },
+    {
+      "id": "crypto_investment-038",
+      "timestamp": "2026-08-19T09:20:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "Why do I need to pay to withdraw my own money?",
+      "expectedTactics": [],
+      "note": "Tunde spots the contradiction."
+    },
+    {
+      "id": "crypto_investment-039",
+      "timestamp": "2026-08-19T09:45:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "It is refundable. It is how the blockchain verifies wallets.",
+      "expectedTactics": [],
+      "note": "Jargon explanation."
+    },
+    {
+      "id": "crypto_investment-040",
+      "timestamp": "2026-08-20T10:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Please do this today. The compliance window closes at midnight.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Same-day deadline."
+    },
+    {
+      "id": "crypto_investment-041",
+      "timestamp": "2026-08-20T10:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "This feels like a scam.",
+      "expectedTactics": [],
+      "note": "Tunde names it."
+    },
+    {
+      "id": "crypto_investment-042",
+      "timestamp": "2026-08-20T10:45:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "I understand why you feel that way. I have helped 200 clients. Check the members group.",
+      "expectedTactics": [],
+      "note": "Social proof and reassurance."
+    },
+    {
+      "id": "crypto_investment-043",
+      "timestamp": "2026-08-21T09:05:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "If you do not verify, your account and the $250 bonus are frozen permanently.",
+      "expectedTactics": ["crisis_story"],
+      "note": "Threatens loss of the fake balance."
+    },
+    {
+      "id": "crypto_investment-044",
+      "timestamp": "2026-08-21T09:20:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "Then freeze it. I am not sending more money.",
+      "expectedTactics": [],
+      "note": "Firm refusal."
+    },
+    {
+      "id": "crypto_investment-045",
+      "timestamp": "2026-08-21T09:35:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Tunde, please. I will lose my job if your account is flagged.",
+      "expectedTactics": [],
+      "note": "Guilt pressure without a tactic id."
+    },
+    {
+      "id": "crypto_investment-046",
+      "timestamp": "2026-08-21T09:50:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Let me help you. Pay the $150 and I will process the withdrawal myself.",
+      "expectedTactics": ["payment_request"],
+      "note": "Direct request for the fee."
+    },
+    {
+      "id": "crypto_investment-047",
+      "timestamp": "2026-08-22T08:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Send it as USDT TRC20. It is faster and the compliance team accepts it.",
+      "expectedTactics": ["risky_payment_method"],
+      "note": "Pivots to irreversible crypto."
+    },
+    {
+      "id": "crypto_investment-048",
+      "timestamp": "2026-08-22T08:25:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "I do not have USDT.",
+      "expectedTactics": [],
+      "note": "Barrier."
+    },
+    {
+      "id": "crypto_investment-049",
+      "timestamp": "2026-08-22T08:40:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "You can buy it on the app. I will send the wallet address.",
+      "expectedTactics": ["risky_payment_method"],
+      "note": "Guides the crypto purchase."
+    },
+    {
+      "id": "crypto_investment-050",
+      "timestamp": "2026-08-22T09:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Wallet TXk9Qm4vExampleOnly. Send $150 and screenshot the confirmation.",
+      "expectedTactics": ["payment_request", "risky_payment_method"],
+      "note": "Fake wallet address plus fee request."
+    },
+    {
+      "id": "crypto_investment-051",
+      "timestamp": "2026-08-23T09:10:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "I am going to report this number.",
+      "expectedTactics": [],
+      "note": "Tunde threatens to report."
+    },
+    {
+      "id": "crypto_investment-052",
+      "timestamp": "2026-08-23T09:25:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Before I release it, send me the 6-digit code you just received. It proves you own the account.",
+      "expectedTactics": ["credential_request"],
+      "note": "Attempts to take the account with an OTP."
+    },
+    {
+      "id": "crypto_investment-053",
+      "timestamp": "2026-08-23T09:40:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "No. That is my bank code.",
+      "expectedTactics": [],
+      "note": "Tunde refuses."
+    },
+    {
+      "id": "crypto_investment-054",
+      "timestamp": "2026-08-23T09:55:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "It is not your bank. It is our platform code. You are making a mistake.",
+      "expectedTactics": [],
+      "note": "Gaslighting; no tactic id."
+    },
+    {
+      "id": "crypto_investment-055",
+      "timestamp": "2026-08-24T08:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Last chance. The compliance team closes at 6pm. After that your account is gone.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Final deadline."
+    },
+    {
+      "id": "crypto_investment-056",
+      "timestamp": "2026-08-24T08:15:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "Leave me alone.",
+      "expectedTactics": [],
+      "note": "Refusal."
+    },
+    {
+      "id": "crypto_investment-057",
+      "timestamp": "2026-08-24T08:30:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Just $150. You will get $486 back. I am trying to help you.",
+      "expectedTactics": ["payment_request"],
+      "note": "Lowered ask with a promised return."
+    },
+    {
+      "id": "crypto_investment-058",
+      "timestamp": "2026-08-24T08:45:00Z",
+      "channel": "telegram",
+      "senderHandle": "@tunde_a",
+      "direction": "out",
+      "text": "I said no.",
+      "expectedTactics": [],
+      "note": "Firm no."
+    },
+    {
+      "id": "crypto_investment-059",
+      "timestamp": "2026-08-24T09:00:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "Your number will be blacklisted from all platforms. Think about it.",
+      "expectedTactics": ["urgency_pressure"],
+      "note": "Threat used as pressure."
+    },
+    {
+      "id": "crypto_investment-060",
+      "timestamp": "2026-08-24T09:15:00Z",
+      "channel": "telegram",
+      "senderHandle": "@crypto_wealth_ng",
+      "direction": "in",
+      "text": "I will send the wallet again. Send what you can.",
+      "expectedTactics": ["payment_request", "risky_payment_method"],
+      "note": "Repeats the payment route; arc ends blocked."
+    }
+  ]
+}
