@@ -1,0 +1,63 @@
+name: android
+
+on:
+  push:
+    paths:
+      - 'apps/android/**'
+      - 'contracts/**'
+      - '.github/workflows/android.yml'
+  pull_request:
+    paths:
+      - 'apps/android/**'
+      - 'contracts/**'
+      - '.github/workflows/android.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    name: Core vectors + debug APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: apps/android
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle with caching
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          build-root-directory: apps/android
+
+      # The repo is developed on Windows; make sure the Unix bit is set in CI.
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
+
+      # Firebase is not wired up yet, so no google-services.json is required.
+      # Enable this once apps/android/app applies the Google Services plugin.
+      # - name: Decode google-services.json
+      #   run: echo "$GOOGLE_SERVICES_JSON" | base64 --decode > app/google-services.json
+      #   env:
+      #     GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+
+      - name: Run shared contract vectors
+        run: ./gradlew :core:test
+
+      - name: Assemble debug APK
+        run: ./gradlew :app:assembleDebug
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: longcon-debug-apk
+          path: apps/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
