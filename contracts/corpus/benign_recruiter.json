@@ -1,0 +1,431 @@
+{
+  "arc": {
+    "id": "benign_recruiter",
+    "label": "benign",
+    "description": "A real in-house recruiter at Northwind Systems contacts Daniel about an application he actually submitted. Interview scheduling, feedback, salary bands, references and a written offer. No fee, no urgency, no code requests.",
+    "contactHandle": "talent@northwind.example",
+    "channel": "gmail"
+  },
+  "messages": [
+    {
+      "id": "benign_recruiter-001",
+      "timestamp": "2026-09-01T09:12:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Subject: Your application for Backend Engineer (req 2291). Hi Daniel, thanks for applying through our careers page. Are you still interested in the role?",
+      "expectedTactics": [],
+      "note": "References a real application; no bait."
+    },
+    {
+      "id": "benign_recruiter-002",
+      "timestamp": "2026-09-01T09:40:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Yes, I am. Thanks for getting back to me.",
+      "expectedTactics": [],
+      "note": "Ordinary reply."
+    },
+    {
+      "id": "benign_recruiter-003",
+      "timestamp": "2026-09-01T10:05:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Great. I have attached the job description so you can check the scope. The team is six engineers and reports to Priya, the engineering manager.",
+      "expectedTactics": [],
+      "note": "Concrete, checkable details."
+    },
+    {
+      "id": "benign_recruiter-004",
+      "timestamp": "2026-09-02T08:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "I read it. The on-call rotation is one week in six, is that right?",
+      "expectedTactics": [],
+      "note": "Candidate asks a specific question."
+    },
+    {
+      "id": "benign_recruiter-005",
+      "timestamp": "2026-09-02T08:55:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "That is right, and it is compensated. Would Thursday 10 September at 14:00 suit you for a first interview?",
+      "expectedTactics": [],
+      "note": "Normal scheduling."
+    },
+    {
+      "id": "benign_recruiter-006",
+      "timestamp": "2026-09-02T09:20:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Thursday works. Is it a video call or onsite?",
+      "expectedTactics": [],
+      "note": "Logistics."
+    },
+    {
+      "id": "benign_recruiter-007",
+      "timestamp": "2026-09-02T09:35:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Video call, 45 minutes. I will send a calendar invite from our domain. No preparation beyond reading the description.",
+      "expectedTactics": [],
+      "note": "No pressure."
+    },
+    {
+      "id": "benign_recruiter-008",
+      "timestamp": "2026-09-03T12:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "The invite arrived. Should I send references before or after the interview?",
+      "expectedTactics": [],
+      "note": "Process question."
+    },
+    {
+      "id": "benign_recruiter-009",
+      "timestamp": "2026-09-03T12:25:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "After the first stage is fine. We only contact referees with your permission.",
+      "expectedTactics": [],
+      "note": "Consent respected."
+    },
+    {
+      "id": "benign_recruiter-010",
+      "timestamp": "2026-09-04T15:10:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "A quick note that the interview panel will be Priya and two senior engineers. They will ask about the payments project on your CV.",
+      "expectedTactics": [],
+      "note": "Transparent panel info."
+    },
+    {
+      "id": "benign_recruiter-011",
+      "timestamp": "2026-09-04T15:40:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Good to know. I will prepare some notes on that project.",
+      "expectedTactics": [],
+      "note": "Candidate prepares."
+    },
+    {
+      "id": "benign_recruiter-012",
+      "timestamp": "2026-09-05T10:15:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "No need to over-prepare. It is a conversation, not an exam.",
+      "expectedTactics": [],
+      "note": "Reassurance."
+    },
+    {
+      "id": "benign_recruiter-013",
+      "timestamp": "2026-09-06T09:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "One thing: I have a hospital appointment on the morning of the 10th. Could we keep the 14:00 slot?",
+      "expectedTactics": [],
+      "note": "Ordinary scheduling constraint."
+    },
+    {
+      "id": "benign_recruiter-014",
+      "timestamp": "2026-09-06T09:25:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Of course. 14:00 is unchanged. If anything changes on our side I will tell you the same day.",
+      "expectedTactics": [],
+      "note": "Flexible, reciprocal."
+    },
+    {
+      "id": "benign_recruiter-015",
+      "timestamp": "2026-09-10T14:50:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Thanks for your time today, Daniel. The panel feedback was positive. Priya would like a short technical follow-up next week.",
+      "expectedTactics": [],
+      "note": "Real feedback."
+    },
+    {
+      "id": "benign_recruiter-016",
+      "timestamp": "2026-09-10T15:20:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "That is good to hear. What will the follow-up cover?",
+      "expectedTactics": [],
+      "note": "Candidate asks."
+    },
+    {
+      "id": "benign_recruiter-017",
+      "timestamp": "2026-09-10T15:35:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "A system design discussion, about an hour. We can do Tuesday or Wednesday, whichever suits.",
+      "expectedTactics": [],
+      "note": "Offers a choice."
+    },
+    {
+      "id": "benign_recruiter-018",
+      "timestamp": "2026-09-11T08:10:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Tuesday morning would be best for me.",
+      "expectedTactics": [],
+      "note": "Candidate chooses."
+    },
+    {
+      "id": "benign_recruiter-019",
+      "timestamp": "2026-09-11T08:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Booked for Tuesday at 10:00. Same link.",
+      "expectedTactics": [],
+      "note": "Confirmation."
+    },
+    {
+      "id": "benign_recruiter-020",
+      "timestamp": "2026-09-12T11:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Could you tell me the salary band for the role? I would rather discuss it before the next stage.",
+      "expectedTactics": [],
+      "note": "Candidate raises pay."
+    },
+    {
+      "id": "benign_recruiter-021",
+      "timestamp": "2026-09-12T11:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "The band is 78 to 92 thousand, depending on experience. There is also a pension contribution and 27 days of leave.",
+      "expectedTactics": [],
+      "note": "Transparent salary band."
+    },
+    {
+      "id": "benign_recruiter-022",
+      "timestamp": "2026-09-12T11:55:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Thanks. My current package is at the top of that band, so I would want to discuss placement.",
+      "expectedTactics": [],
+      "note": "Normal negotiation."
+    },
+    {
+      "id": "benign_recruiter-023",
+      "timestamp": "2026-09-12T12:20:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "That is fair. Bring it up with Priya and HR will confirm the final figure in writing.",
+      "expectedTactics": [],
+      "note": "Points to a formal process."
+    },
+    {
+      "id": "benign_recruiter-024",
+      "timestamp": "2026-09-15T10:05:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "The design discussion went well. The team would like to move to the offer stage.",
+      "expectedTactics": [],
+      "note": "Good news."
+    },
+    {
+      "id": "benign_recruiter-025",
+      "timestamp": "2026-09-15T10:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "That is great news. What happens next?",
+      "expectedTactics": [],
+      "note": "Candidate asks."
+    },
+    {
+      "id": "benign_recruiter-026",
+      "timestamp": "2026-09-15T10:45:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Two references, then a written offer. Nothing is needed from you until you have seen the offer.",
+      "expectedTactics": [],
+      "note": "Order of steps; no fee."
+    },
+    {
+      "id": "benign_recruiter-027",
+      "timestamp": "2026-09-16T09:15:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Here are the two referees. Both have agreed to be contacted.",
+      "expectedTactics": [],
+      "note": "Candidate supplies references."
+    },
+    {
+      "id": "benign_recruiter-028",
+      "timestamp": "2026-09-16T09:40:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Received, thank you. We will call them on Thursday and Friday.",
+      "expectedTactics": [],
+      "note": "Ordinary process."
+    },
+    {
+      "id": "benign_recruiter-029",
+      "timestamp": "2026-09-17T16:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Both references were positive. HR is drafting the offer this afternoon.",
+      "expectedTactics": [],
+      "note": "Progress update."
+    },
+    {
+      "id": "benign_recruiter-030",
+      "timestamp": "2026-09-17T16:25:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Thanks for keeping me posted.",
+      "expectedTactics": [],
+      "note": "Polite reply."
+    },
+    {
+      "id": "benign_recruiter-031",
+      "timestamp": "2026-09-18T09:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "The offer letter is attached as a PDF. Read it carefully and come back with any questions. There is no expiry pressure from us.",
+      "expectedTactics": [],
+      "note": "Explicitly says no pressure."
+    },
+    {
+      "id": "benign_recruiter-032",
+      "timestamp": "2026-09-18T09:45:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "I can open it. The start date says 3 November. Is that negotiable?",
+      "expectedTactics": [],
+      "note": "Normal question."
+    },
+    {
+      "id": "benign_recruiter-033",
+      "timestamp": "2026-09-18T10:10:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "It is. If you need a week later, that is fine. Let me know by the end of the month.",
+      "expectedTactics": [],
+      "note": "Reasonable deadline for admin only."
+    },
+    {
+      "id": "benign_recruiter-034",
+      "timestamp": "2026-09-19T13:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "One clause mentions a six-month probation. Does the notice period change during probation?",
+      "expectedTactics": [],
+      "note": "Contract question."
+    },
+    {
+      "id": "benign_recruiter-035",
+      "timestamp": "2026-09-19T13:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "Yes, it is two weeks during probation and one month afterwards. HR can walk you through it on a call.",
+      "expectedTactics": [],
+      "note": "Clear answer."
+    },
+    {
+      "id": "benign_recruiter-036",
+      "timestamp": "2026-09-20T09:20:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "I would like to accept. What do you need from me?",
+      "expectedTactics": [],
+      "note": "Acceptance."
+    },
+    {
+      "id": "benign_recruiter-037",
+      "timestamp": "2026-09-20T09:45:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "A signed copy and your bank details for payroll. Use the secure HR portal link in the letter, not email.",
+      "expectedTactics": [],
+      "note": "Directs to a secure official channel."
+    },
+    {
+      "id": "benign_recruiter-038",
+      "timestamp": "2026-09-20T10:10:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Understood. I will upload it through the portal and not by email.",
+      "expectedTactics": [],
+      "note": "Candidate follows the safe route."
+    },
+    {
+      "id": "benign_recruiter-039",
+      "timestamp": "2026-09-21T08:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "The portal shows your signed letter. Welcome aboard, Daniel. Your laptop will be couriered to the address on file.",
+      "expectedTactics": [],
+      "note": "Completion."
+    },
+    {
+      "id": "benign_recruiter-040",
+      "timestamp": "2026-09-21T09:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Thank you. I will hand in my notice this week.",
+      "expectedTactics": [],
+      "note": "Candidate's own decision."
+    },
+    {
+      "id": "benign_recruiter-041",
+      "timestamp": "2026-09-22T14:00:00Z",
+      "channel": "gmail",
+      "senderHandle": "talent@northwind.example",
+      "direction": "in",
+      "text": "One last administrative note: your first-day induction is at 09:30 in the Leeds office, and lunch is provided.",
+      "expectedTactics": [],
+      "note": "Practical detail."
+    },
+    {
+      "id": "benign_recruiter-042",
+      "timestamp": "2026-09-22T14:30:00Z",
+      "channel": "gmail",
+      "senderHandle": "daniel.okafor@example.com",
+      "direction": "out",
+      "text": "Noted. See you on the 3rd.",
+      "expectedTactics": [],
+      "note": "Friendly close."
+    }
+  ]
+}
