@@ -135,7 +135,7 @@ class RiskEngine(private val contract: TacticsContract) {
         val progression = 1.0 + config.progressionBonus * maxOf(0, stagesSeen.size - 1) * (if (ordered) 1.0 else 0.5)
 
         val score = Math.round(100.0 * (1.0 - exp(-(raw * progression) / config.saturation))).toInt()
-        val capped = capLevel(levelFor(score), EXTRACTION_STAGE in stagesSeen)
+        val capped = capLevel(levelFor(score), EXTRACTION_STAGE in stagesSeen, stagesSeen.size)
 
         return risk.copy(
             score = score,
@@ -170,8 +170,12 @@ class RiskEngine(private val contract: TacticsContract) {
         return sorted.fold(emptyRisk(contactId, start)) { risk, message -> applyTagged(risk, message) }
     }
 
-    private fun capLevel(level: RiskLevel, extractionSeen: Boolean): RiskLevel =
-        if (level == RiskLevel.DANGER && !extractionSeen) RiskLevel.WARNING else level
+    /** One kind of sign alone is at most WATCH; DANGER needs an extraction-stage sign. Mirrors risk.ts. */
+    private fun capLevel(level: RiskLevel, extractionSeen: Boolean, stageCount: Int): RiskLevel = when {
+        stageCount < 2 && (level == RiskLevel.WARNING || level == RiskLevel.DANGER) -> RiskLevel.WATCH
+        level == RiskLevel.DANGER && !extractionSeen -> RiskLevel.WARNING
+        else -> level
+    }
 
     private fun emptyRoutes(): Map<Route, Int> = linkedMapOf(
         Route.RULES to 0,

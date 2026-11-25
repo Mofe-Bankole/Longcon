@@ -52,6 +52,8 @@ const RISK_CASES: Record<string, Step[]> = {
   ordered_arc: [[0, 'on_device', 'love_bombing'], [5, 'on_device', 'secrecy_request'], [10, 'on_device', 'crisis_story']],
   repeats: [[0, 'on_device', 'urgency_pressure'], [1, 'on_device', 'urgency_pressure'], [2, 'on_device', 'urgency_pressure'], [3, 'on_device', 'urgency_pressure']],
   job_scam: [[0, 'on_device', 'job_offer_bait'], [1, 'on_device', 'move_off_platform'], [3, 'on_device', 'job_offer_bait', 'payment_request']],
+  family_loan_single_stage: [[0, 'on_device', 'payment_request'], [0, 'on_device', 'payment_request'], [12, 'on_device', 'payment_request']],
+  rules_only_money: [[0, 'rules', 'payment_request', 'risky_payment_method']],
   otp_grab: [[0, 'on_device', 'impersonation'], [0, 'on_device', 'credential_request', 'urgency_pressure']],
 };
 

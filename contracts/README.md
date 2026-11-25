@@ -26,7 +26,8 @@ Regenerate after changing the TS engine or `tactics.json`: `GEN_VECTORS=1 pnpm -
 - `progression = 1 + progressionBonus × (distinctStages − 1) × (orderedArc ? 1 : 0.5)`. A stage list is *ordered* if, by first
   appearance, the stage indices never go down.
 - `score = round(100 × (1 − exp(−raw × progression / saturation)))`. Round half up; for positive values Kotlin `Math.round` matches JS.
-- `level`: compare against `levels` thresholds, and **cap `danger` to `warning` unless an `extraction`-stage tactic was seen**.
+- `level`: compare against `levels` thresholds, then cap: **fewer than 2 distinct stages → at most `watch`**;
+  otherwise **`danger` → `warning` unless an `extraction`-stage tactic was seen**.
 - `shouldCheck = score ≥ checkAt` and `shouldEscalate = score ≥ escalateAt`. Both are sticky while folding.
 - `day = floor((sentAt − firstSentAt) / 86_400_000)`.
 

@@ -423,6 +423,72 @@
     }
   },
   {
+    "name": "family_loan_single_stage",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "payment_request"
+        ]
+      },
+      {
+        "messageId": "m1",
+        "sentAt": 1793491200000,
+        "route": "on_device",
+        "tactics": [
+          "payment_request"
+        ]
+      },
+      {
+        "messageId": "m2",
+        "sentAt": 1794528000000,
+        "route": "on_device",
+        "tactics": [
+          "payment_request"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 45,
+      "level": "watch",
+      "stageReached": "extraction",
+      "shouldCheck": true,
+      "shouldEscalate": false,
+      "days": [
+        0,
+        0,
+        12
+      ]
+    }
+  },
+  {
+    "name": "rules_only_money",
+    "input": [
+      {
+        "messageId": "m0",
+        "sentAt": 1793491200000,
+        "route": "rules",
+        "tactics": [
+          "payment_request",
+          "risky_payment_method"
+        ]
+      }
+    ],
+    "expect": {
+      "score": 43,
+      "level": "watch",
+      "stageReached": "extraction",
+      "shouldCheck": true,
+      "shouldEscalate": false,
+      "days": [
+        0,
+        0
+      ]
+    }
+  },
+  {
     "name": "otp_grab",
     "input": [
       {

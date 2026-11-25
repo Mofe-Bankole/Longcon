@@ -102,7 +102,7 @@ export function rescore(risk: ContactRisk, cfg: RiskConfig = DEFAULT_RISK_CONFIG
   const score = Math.round(100 * (1 - Math.exp(-(raw * progression) / cfg.saturation)));
   // "Danger" means money or codes were asked for. Before that, the worst is a warning:
   // real partners and families also say loving things, mention emergencies, or ask for privacy.
-  const level = capLevel(levelFor(score, cfg), stagesSeen.has('extraction'));
+  const level = capLevel(levelFor(score, cfg), stagesSeen.has('extraction'), stagesSeen.size);
   return {
     ...risk,
     score,
@@ -145,6 +145,13 @@ export function scoreContact(
   return sorted.reduce((r, t) => applyTagged(r, t, cfg), emptyRisk(contactId, start));
 }
 
-function capLevel(level: RiskLevel, extractionSeen: boolean): RiskLevel {
-  return level === 'danger' && !extractionSeen ? 'warning' : level;
+/**
+ * Caps that encode what a long con IS, so honest conversations don't alarm anyone:
+ * - one kind of sign on its own (e.g. a sister asking to borrow money, three times) is at most "watch";
+ * - "danger" needs money or codes to have been asked for.
+ */
+function capLevel(level: RiskLevel, extractionSeen: boolean, stageCount: number): RiskLevel {
+  if (stageCount < 2 && (level === 'warning' || level === 'danger')) return 'watch';
+  if (level === 'danger' && !extractionSeen) return 'warning';
+  return level;
 }
