@@ -12,7 +12,10 @@ import {
   type TacticId,
   type TaggedMessage,
 } from '@longcon/core';
-import { CONVERSATIONS, type DemoConversation } from './corpus';
+import { CONVERSATIONS as ALL, type DemoConversation } from './corpus';
+
+// Only the labelled corpus is benchmarked, never a person's own imported chat.
+const CONVERSATIONS = ALL.filter((c) => c.label !== 'own');
 import { state } from './engine';
 import { esc, fmtMs } from './panel';
 
@@ -183,7 +186,7 @@ function arcOutcome(conv: DemoConversation, tagged: TaggedMessage[]): ArcResult 
   const money = conv.messages.find((m) => !m.fromUser && (conv.expected.get(m.id) ?? []).some((t) => MONEY.includes(t)));
   return {
     id: conv.id,
-    label: conv.label,
+    label: conv.label as 'scam' | 'benign',
     finalLevel: final.level,
     score: final.score,
     firstWarningDay,

@@ -2,6 +2,7 @@ import { LEVEL_TITLES, TACTICS, type ChatMessage } from '@longcon/core';
 import { renderArc, routeBadge } from '@longcon/ui';
 import { CHANNEL_NAMES, CONVERSATIONS, type DemoConversation } from './corpus';
 import { downloadModel, onChange, resetJudge, router, setCloudConsent, state } from './engine';
+import { renderImport } from './own';
 import { esc, renderPanel } from './panel';
 
 /**
@@ -75,7 +76,7 @@ function renderModel(): void {
   if (s === 'unavailable' || s === 'downloadable') {
     const wrap = document.createElement('label');
     wrap.className = 'consent';
-    wrap.innerHTML = `<input type="checkbox" ${state.cloudConsent ? 'checked' : ''}/> Let Google check these demo messages <span class="muted">(they're made up)</span>`;
+    wrap.innerHTML = `<input type="checkbox" ${state.cloudConsent ? 'checked' : ''}/> Let Google check messages <span class="muted">(sends their text to Google)</span>`;
     wrap.querySelector('input')!.onchange = (e) => setCloudConsent((e.target as HTMLInputElement).checked);
     el.append(wrap);
   }
@@ -89,7 +90,12 @@ function renderModel(): void {
 
 function renderConvs(): void {
   const nav = document.getElementById('convs')!;
+  const own = document.createElement('button');
+  own.className = 'conv conv--own';
+  own.innerHTML = `<span class="avatar avatar--plus" aria-hidden="true">+</span><span class="conv__main"><span class="conv__who"><b>Check your own conversation</b></span><span class="conv__meta">Paste a chat or open a WhatsApp export</span></span>`;
+  own.onclick = openImport;
   nav.replaceChildren(
+    own,
     ...CONVERSATIONS.map((c) => {
       const risk = router.contact(c.id);
       const b = document.createElement('button');
@@ -109,8 +115,41 @@ function renderConvs(): void {
   );
 }
 
+function openImport(): void {
+  for (const c of CONVERSATIONS) pauseConv(c.id);
+  document.querySelector('.conv--active')?.classList.remove('conv--active');
+  const list = document.getElementById('msgs')!;
+  document.getElementById('bar')!.innerHTML = `<div class="bar__title"><b>Your conversation</b><span class="muted">Stays on this computer unless you allow Google</span></div>`;
+  list.replaceChildren();
+  const holder = document.createElement('li');
+  holder.className = 'import-holder';
+  list.append(holder);
+  renderImport(
+    holder,
+    (conv) => {
+      convState.set(conv.id, { fed: 0 });
+      current = conv;
+      renderConvs();
+      renderThread(true);
+      feed(conv.messages.length);
+    },
+    () => renderThread(true),
+  );
+  const panel = document.getElementById('panel')!;
+  panel.dataset.conv = '';
+  panel.className = 'panel lc-large';
+  panel.innerHTML = `<p class="panel__eyebrow">Longcon</p><h2 class="panel__title">Your conversation</h2>
+    <p class="panel__lead">Longcon looks at the whole conversation, not one message: how fast it got personal, whether you were moved to another app or asked to keep secrets, and whether money or codes came up.</p>`;
+}
+
+function pauseConv(id: string): void {
+  const cs = convState.get(id);
+  if (cs?.timer !== undefined) clearInterval(cs.timer);
+  if (cs) cs.timer = undefined;
+}
+
 function select(c: DemoConversation): void {
-  if (c.id === current.id) return;
+  if (c.id === current.id && !document.querySelector('.import-holder')) return;
   current = c;
   renderConvs();
   renderThread(true);

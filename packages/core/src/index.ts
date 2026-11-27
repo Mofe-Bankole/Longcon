@@ -10,6 +10,7 @@ export * from './metrics';
 export * from './router';
 export * from './judge';
 export * from './verdict';
+export * from './chatImport';
 export { mountSpike } from './spike';
 export { envFromVite } from './env';
 export type { GenerativeModel } from 'firebase/ai';

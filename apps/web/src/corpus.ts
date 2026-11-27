@@ -17,7 +17,8 @@ interface RawArc {
 
 export interface DemoConversation {
   id: string;
-  label: 'scam' | 'benign';
+  /** 'own' = a conversation the person pasted or imported (never benchmarked). */
+  label: 'scam' | 'benign' | 'own';
   /** The person Longcon protects in this conversation. */
   userName: string;
   /** The other party, as the user knows them. */
@@ -77,4 +78,5 @@ export const CHANNEL_NAMES: Record<Channel, string> = {
   sms: 'SMS',
   telegram: 'Telegram',
   demo: 'Demo',
+  pasted: 'Pasted',
 };

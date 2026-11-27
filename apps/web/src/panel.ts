@@ -161,7 +161,8 @@ export function speak(text: string): void {
   speechSynthesis.speak(u);
 }
 
-export const firstName = (s: string) => s.split(/[ ,]/)[0]!;
+/** "Alex, Crypto Prime Markets" → "Alex"; "Dr Richard" stays "Dr Richard". */
+export const firstName = (s: string) => s.split(',')[0]!.trim();
 export const fmtMs = (ms: number) => (ms < 1000 ? `${Math.round(ms)} ms` : `${(ms / 1000).toFixed(1)} s`);
 export const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);

@@ -3,7 +3,7 @@ import type { Stage, TacticId } from './tactics';
 /** Where a model call actually ran. Mirrors firebase/ai InferenceSource. */
 export type Route = 'on_device' | 'in_cloud' | 'rules';
 
-export type Channel = 'gmail' | 'whatsapp' | 'messenger' | 'sms' | 'telegram' | 'demo';
+export type Channel = 'gmail' | 'whatsapp' | 'messenger' | 'sms' | 'telegram' | 'demo' | 'pasted';
 
 /** A chat message as read from WhatsApp Web, Gmail, the demo inbox, etc. */
 export interface ChatMessage {

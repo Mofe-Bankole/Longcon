@@ -18,6 +18,8 @@ on the device for 12 warning signs. A tested risk engine scores the progression 
 and plain words (and aloud, if they want), what's going on and what to do: *"Please don't send money, gift cards or codes. Talk to
 someone you trust first."*
 
+Anyone can **check their own conversation**: paste a chat or open a WhatsApp "Export chat" file. It's parsed and checked in the browser, so nothing is uploaded unless you allow it.
+
 When a conversation is flagged, the person can ask for a **second opinion**. Gemini in the cloud receives only a
 redacted list of the warning signs, never the conversation. It returns a verdict and **three questions a genuine
 person could answer and a scammer can't**. The card shows *exactly* what was sent.

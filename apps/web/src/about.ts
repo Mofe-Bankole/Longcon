@@ -47,6 +47,7 @@ export function mountAbout(root: HTMLElement): void {
         with Gemini Nano, and warns you, in plain words, before the money goes.</p>
       <div class="hero__arc"></div>
       <p><a class="btn btn--primary" href="#/">Watch it read Margaret's 3 weeks →</a></p>
+      <p class="muted">Or check your own: paste a chat or open a WhatsApp export. It's read on your computer.</p>
     </section>
 
     <section>
@@ -78,7 +79,7 @@ export function mountAbout(root: HTMLElement): void {
       <h2>Limits, honestly</h2>
       <ul class="limits">
         <li>On-device Nano needs desktop Chrome with a capable GPU (or 16 GB RAM on CPU). Elsewhere the quick check runs and cloud labelling is opt-in.</li>
-        <li>The demo uses six made-up conversations written by our team, not real victims' messages. English only so far.</li>
+        <li>The six demo conversations were written by our team, not taken from real victims. You can check your own chats (paste or WhatsApp export), but Longcon doesn't read your inbox automatically in this build. English only so far.</li>
         <li>Google Search grounding for the second opinion needs Firebase's paid plan; on the free plan Longcon falls back to Gemini alone and says so on the card.</li>
         <li>Android: Nano only runs while Longcon is open (an Android rule), so in the background the phone runs the quick check and asks the person to tap to check privately.</li>
         <li>The guardian dashboard and cross-device household sync are designed (see architecture) but not part of this build.</li>

@@ -35,7 +35,8 @@ const STAGE_VAR: Record<Stage, string> = {
 /** Render (or update in place) the Arc. Updating keeps CSS transitions smooth. */
 export function renderArc(risk: Pick<ContactRisk, 'timeline'>, el?: HTMLElement, opts: { compact?: boolean } = {}): HTMLElement {
   const root = el ?? document.createElement('div');
-  root.className = `lc-arc${opts.compact ? ' lc-arc--compact' : ''}`;
+  root.classList.add('lc-arc'); // add, don't overwrite: callers find the element by their own class
+  root.classList.toggle('lc-arc--compact', !!opts.compact);
   root.setAttribute('role', 'img');
   const segs = arcSegments(risk);
   if (root.children.length !== 4) {
