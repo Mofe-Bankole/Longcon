@@ -12,5 +12,6 @@
   "dependencies": {
     "@longcon/core": "workspace:*",
     "@longcon/ui": "workspace:*"
-  }
+  },
+  "license": "Apache-2.0"
 }

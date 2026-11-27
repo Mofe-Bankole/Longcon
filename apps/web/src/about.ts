@@ -92,7 +92,7 @@ export function mountAbout(root: HTMLElement): void {
         ${EVIDENCE.map(([c, w, p]) => `<tr><td>${esc(c)}</td><td><a href="${REPO + p}">${esc(p)}</a><br><span class="muted">${esc(w)}</span></td></tr>`).join('')}
       </tbody></table>
     </section>
-    <footer class="about__foot">Built for #BuildHybridAI 2026 · MIT licensed · Firebase AI Logic · Gemini Nano</footer>
+    <footer class="about__foot">Built for #BuildHybridAI 2026 · Apache-2.0 licensed · Firebase AI Logic · Gemini Nano</footer>
   </div>`;
 
   renderArc(

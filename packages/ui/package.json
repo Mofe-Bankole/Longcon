@@ -12,5 +12,6 @@
     "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",
     "@fontsource-variable/newsreader": "^5.3.0",
     "@longcon/core": "workspace:*"
-  }
+  },
+  "license": "Apache-2.0"
 }
