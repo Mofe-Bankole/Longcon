@@ -27,8 +27,13 @@ function beats(): Beat[] {
       tagged: { messageId: m.id, contactId: conv.id, sentAt: m.sentAt, hits: [{ tactic, evidence: m.text }], route: 'on_device', latencyMs: 0 },
     });
   }
-  return out.sort((a, b) => a.tagged.sentAt - b.tagged.sentAt);
+  out.sort((a, b) => a.tagged.sentAt - b.tagged.sentAt);
+  // Count days from the first message (as the demo does), not from the first warning sign.
+  const first = conv.messages.find((x) => !x.fromUser)!;
+  start = { messageId: first.id, contactId: conv.id, sentAt: first.sentAt, hits: [], route: 'on_device', latencyMs: 0 };
+  return out;
 }
+let start: TaggedMessage | undefined;
 
 /** The sentence that carries the sign (by the quick-check patterns), else the first one; max ~95 chars. */
 function shorten(t: string, tactic: TacticId): string {
@@ -152,7 +157,7 @@ function play(root: HTMLElement): void {
         li.innerHTML = `<span class="l-line__day">Day ${b.day + 1}</span><span class="l-line__text">“${esc(b.text)}”</span>
           <span class="sign-chip stage-${TACTICS[b.tactic].stage}">${esc(TACTICS[b.tactic].plain)}</span>`;
         list.append(li);
-        const risk = scoreContact('romance_oil_rig', bs.slice(0, i + 1).map((x) => x.tagged));
+        const risk = scoreContact('romance_oil_rig', [start!, ...bs.slice(0, i + 1).map((x) => x.tagged)]);
         renderArc(risk, arcEl);
         if (i === bs.length - 1) {
           timers.push(
