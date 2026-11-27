@@ -44,6 +44,8 @@ download a `results.json`. Keep the PC plugged in, close games and heavy apps, a
 Send Mofe the file.
 
 ## Task 4: demo footage
+**Follow the shot list in [`video.md`](video.md)** (it replaces the short list below).
+
 Record with **Win + Alt + R** (Xbox Game Bar), at 1080p, with notifications off (Focus assist on).
 - The side panel checking a message on-device. Hold still for 2 seconds on the result.
 - `chrome://on-device-internals` showing the model is ready (proof shot for the video).
