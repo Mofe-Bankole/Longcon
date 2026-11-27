@@ -8,5 +8,8 @@ export * from './prompts';
 export * from './ai';
 export * from './metrics';
 export * from './router';
+export * from './judge';
+export * from './verdict';
 export { mountSpike } from './spike';
 export { envFromVite } from './env';
+export type { GenerativeModel } from 'firebase/ai';

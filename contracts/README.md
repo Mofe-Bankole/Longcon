@@ -27,7 +27,8 @@ Regenerate after changing the TS engine or `tactics.json`: `GEN_VECTORS=1 pnpm -
   appearance, the stage indices never go down.
 - `score = round(100 × (1 − exp(−raw × progression / saturation)))`. Round half up; for positive values Kotlin `Math.round` matches JS.
 - `level`: compare against `levels` thresholds, then cap: **fewer than 2 distinct stages → at most `watch`**;
-  otherwise **`danger` → `warning` unless an `extraction`-stage tactic was seen**.
+  otherwise **`danger` → `warning` unless an `extraction`-stage tactic was seen AND at least one tactic is confirmed**
+  (seen by a model, not only by rules).
 - `shouldCheck = score ≥ checkAt` and `shouldEscalate = score ≥ escalateAt`. Both are sticky while folding.
 - `day = floor((sentAt − firstSentAt) / 86_400_000)`.
 

@@ -135,7 +135,7 @@ class RiskEngine(private val contract: TacticsContract) {
         val progression = 1.0 + config.progressionBonus * maxOf(0, stagesSeen.size - 1) * (if (ordered) 1.0 else 0.5)
 
         val score = Math.round(100.0 * (1.0 - exp(-(raw * progression) / config.saturation))).toInt()
-        val capped = capLevel(levelFor(score), EXTRACTION_STAGE in stagesSeen, stagesSeen.size)
+        val capped = capLevel(levelFor(score), EXTRACTION_STAGE in stagesSeen, stagesSeen.size, confirmed.isNotEmpty())
 
         return risk.copy(
             score = score,
@@ -170,10 +170,13 @@ class RiskEngine(private val contract: TacticsContract) {
         return sorted.fold(emptyRisk(contactId, start)) { risk, message -> applyTagged(risk, message) }
     }
 
-    /** One kind of sign alone is at most WATCH; DANGER needs an extraction-stage sign. Mirrors risk.ts. */
-    private fun capLevel(level: RiskLevel, extractionSeen: Boolean, stageCount: Int): RiskLevel = when {
+    /**
+     * One kind of sign alone is at most WATCH; DANGER needs an extraction-stage sign AND at least
+     * one model-confirmed sign (rules alone are never sure enough). Mirrors risk.ts.
+     */
+    private fun capLevel(level: RiskLevel, extractionSeen: Boolean, stageCount: Int, anyConfirmed: Boolean): RiskLevel = when {
         stageCount < 2 && (level == RiskLevel.WARNING || level == RiskLevel.DANGER) -> RiskLevel.WATCH
-        level == RiskLevel.DANGER && !extractionSeen -> RiskLevel.WARNING
+        level == RiskLevel.DANGER && (!extractionSeen || !anyConfirmed) -> RiskLevel.WARNING
         else -> level
     }
 

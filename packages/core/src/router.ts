@@ -119,6 +119,23 @@ export class Router {
     return this.contactsById.get(id)?.risk;
   }
 
+  /** Labels for each message of a contact (to show signs under each message). */
+  tagsFor(contactId: string): ReadonlyMap<string, TaggedMessage> {
+    return this.contactsById.get(contactId)?.tags ?? new Map();
+  }
+
+  /** Drop everything known about a contact (demo reset). Cached labels stay cached. */
+  forget(contactId: string): void {
+    this.contactsById.delete(contactId);
+    this.queue = this.queue.filter((m) => m.contactId !== contactId);
+    this.opts.events?.onQueue?.(this.queue.length);
+  }
+
+  /** Pending model work for one contact. */
+  pendingFor(contactId: string): number {
+    return this.queue.filter((m) => m.contactId === contactId).length;
+  }
+
   pending(): number {
     return this.queue.length;
   }
@@ -182,15 +199,18 @@ export class Router {
     try {
       while (this.queue.length && !this.modelDown) {
         const batch = this.nextBatch();
+        const contactId = batch[0]!.contactId;
+        const before = this.contactsById.get(contactId);
         try {
           const tagged = await this.opts.tagger.tag(batch, this.contextFor(batch[0]!));
-          const c = this.state(batch[0]!.contactId);
+          const c = this.contactsById.get(contactId);
+          if (!c || c !== before) continue; // forgotten (reset) while the model was working
           for (const t of tagged) {
             c.tags.set(t.messageId, t);
             this.latency.add(t.route, t.latencyMs);
             await this.cache.set(t);
           }
-          this.rescore(batch[0]!.contactId);
+          this.rescore(contactId);
         } catch (err) {
           this.queue.unshift(...batch);
           this.modelDown = true;

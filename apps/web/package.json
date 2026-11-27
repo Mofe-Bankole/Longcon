@@ -9,5 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": { "@longcon/core": "workspace:*" }
+  "dependencies": {
+    "@longcon/core": "workspace:*",
+    "@longcon/ui": "workspace:*"
+  }
 }

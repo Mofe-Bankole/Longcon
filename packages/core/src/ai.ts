@@ -57,13 +57,19 @@ export interface TaggerOptions {
   cloudModel?: string;
   /** Tag several messages per call (web default). Android uses single-message calls (4k-token limit). */
   batch?: boolean;
+  /** Benchmark only: force the cloud model (ONLY_IN_CLOUD) to compare against on-device. */
+  forceCloud?: boolean;
 }
 
 export function createTaggerModel(ai: AI, opts: TaggerOptions): GenerativeModel {
   const system = opts.batch ? BATCH_TAGGER_SYSTEM : TAGGER_SYSTEM;
   const schema = opts.batch ? BATCH_TAG_SCHEMA : TAG_SCHEMA;
   return getGenerativeModel(ai, {
-    mode: opts.allowCloudFallback ? InferenceMode.PREFER_ON_DEVICE : InferenceMode.ONLY_ON_DEVICE,
+    mode: opts.forceCloud
+      ? InferenceMode.ONLY_IN_CLOUD
+      : opts.allowCloudFallback
+        ? InferenceMode.PREFER_ON_DEVICE
+        : InferenceMode.ONLY_ON_DEVICE,
     onDeviceParams: {
       createOptions: {
         expectedInputs: [{ type: 'text', languages: ['en'] }],

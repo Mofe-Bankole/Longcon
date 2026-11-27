@@ -46,7 +46,8 @@
 Implementation (web): `packages/core/src/router.ts`. Rules results show instantly and are *provisional*
 (their weight is multiplied by `rulesDiscount` until a model confirms them, so a rules-only contact can reach
 *warning* but not *danger*). Model calls are batched (6 messages per call), run one at a time with the riskiest
-contact first, and are cached by message id. **Danger requires an extraction-stage sign** (money or codes).
+contact first, and are cached by message id. **Danger requires an extraction-stage sign** (money or codes) **and at least one
+model-confirmed sign**; a single kind of sign on its own is at most *watch*.
 
 ### 2.3 Android background design (settled)
 On-device Gemini Nano on Android runs **only when the app is the top foreground app**. Background

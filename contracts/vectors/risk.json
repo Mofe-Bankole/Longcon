@@ -156,7 +156,7 @@
     ],
     "expect": {
       "score": 83,
-      "level": "danger",
+      "level": "warning",
       "stageReached": "extraction",
       "shouldCheck": true,
       "shouldEscalate": true,
