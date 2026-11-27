@@ -52,7 +52,7 @@ export function renderPanel(root: HTMLElement, conv: DemoConversation, fed: numb
       <span>${scanned} message${scanned === 1 ? '' : 's'} checked${checkedPrivately ? `, ${checkedPrivately} privately on this computer` : ''}${
         lat.n ? ` · typically ${fmtMs(lat.p50)} each` : ''
       }</span>
-      ${pending ? `<span class="foot__pending"><span class="shimmer"></span>Checking ${pending} more privately…</span>` : ''}
+      ${pending ? `<span class="foot__pending"><span class="shimmer"></span>Checking ${pending} more${state.status === 'ready' ? ' privately' : ' with Google'}…</span>` : ''}
     </footer>`;
 
   renderArc(risk, adopt(root, '.panel__arc', oldArc));
