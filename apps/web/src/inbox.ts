@@ -27,6 +27,7 @@ export function mountInbox(root: HTMLElement): void {
     <header class="topbar">
       <a class="brand" href="#/"><span class="brand__mark" aria-hidden="true"></span>Longcon</a>
       <span class="topbar__tag">Demo · 6 made-up conversations</span>
+      <a class="topbar__link" href="#/about">How it works</a>
       <div class="model" id="model"></div>
     </header>
     <div class="inbox">

@@ -8,6 +8,7 @@ const root = document.getElementById('app')!;
 async function route(): Promise<void> {
   const page = location.hash.replace(/^#\/?/, '');
   if (page === 'bench') (await import('./bench')).mountBench(root);
+  else if (page === 'about') (await import('./about')).mountAbout(root);
   else if (page === 'spike') {
     const { envFromVite, initLongcon, mountSpike } = await import('@longcon/core');
     await import('@longcon/core/src/spike.css');
