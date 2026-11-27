@@ -1,4 +1,7 @@
-# Moses: Nano machine
+# Moses: demo lead (Nano machine)
+
+**You're in charge of the demos.** Every on-device shot in the video, the benchmark run, and the final demo
+recordings happen on your PC. Mofe writes the script and narration, and Stephen edits.
 
 Welcome to Longcon. Your PC (RTX 2070, 16 GB) is one of the few machines on the team that can run
 **Gemini Nano** on-device, so it's where we prove Longcon's core claim: **messages are checked privately
@@ -50,9 +53,13 @@ Record with **Win + Alt + R** (Xbox Game Bar), at 1080p, with notifications off 
 Remove the extension (`chrome://extensions` → Remove), and delete the unzipped folder and the zip.
 You can leave the flags and the downloaded model in place; that makes the next session quicker.
 
-## Deadlines
+## Deadlines (final 4 days)
 | What | When |
 |---|---|
-| Tasks 1–2 | **Thu Nov 26** |
-| Task 3 + Task 4 | **Fri Nov 27, before 12:00 WAT** (code freeze) |
-| Re-takes if needed | Sat Nov 28 |
+| Tasks 1–2 (setup + on-device test) | **Fri Nov 27** |
+| Task 3: benchmark run on the hosted demo | **Sat Nov 28** |
+| Task 4: final demo recordings, following Mofe's shot list | **Sat Nov 28 – Sun Nov 29, 12:00** |
+| Re-takes | Sun Nov 29, evening |
+| Submission | Mon Nov 30 (Mofe) |
+
+Once the hosted demo is live (`https://longcon.web.app`), you won't need the zip for demos: just open the URL in your Longcon Chrome profile.
