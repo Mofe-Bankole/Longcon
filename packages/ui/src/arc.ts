@@ -76,7 +76,7 @@ export const ROUTE_LABELS: Record<Route, string> = {
   in_cloud: 'Checked by Google, with your permission',
   rules: 'Quick check',
 };
-export const JUDGE_LABEL = 'Second opinion from Google (only the pattern was sent, not your messages)';
+export const JUDGE_LABEL = 'Second opinion from Google (only the warning signs were sent, not the conversation)';
 
 export function routeBadge(route: Route, text = ROUTE_LABELS[route]): HTMLElement {
   const el = document.createElement('span');

@@ -41,7 +41,7 @@
 | 1 | `rules` | Always, instantly, in the background | Low-confidence tactic hits from keyword/regex patterns (USDT, gift card, "don't tell", "add me on Telegram", OTP…). Provisional score |
 | 2 | `on_device` | **Web:** whenever the side panel/page is open. **Android:** only while Longcon is the top foreground app (AICore rule) | Full tactic tags (structured JSON) + extracted handles |
 | 3 | risk engine | After every rung | Score, level, stage of the scam arc, escalate flag |
-| 4 | `in_cloud` | Score ≥ escalation threshold (or explicit user/guardian request) | Verdict + evidence + verification questions, using Google Search grounding on a **redacted summary** |
+| 4 | `in_cloud` | Score ≥ escalation threshold, and the person clicks *Get a second opinion* | Verdict + checks + verification questions, using Google Search grounding (falls back to Gemini alone if search quota is unavailable) on a **redacted summary**: the warning signs in order, each with a ≤100-char quote of the flagged line, names/emails/phones/numbers redacted. The UI shows exactly what was sent |
 
 Implementation (web): `packages/core/src/router.ts`. Rules results show instantly and are *provisional*
 (their weight is multiplied by `rulesDiscount` until a model confirms them, so a rules-only contact can reach

@@ -106,7 +106,7 @@ function renderOpinion(el: Element, risk: ContactRisk, conv: DemoConversation): 
     el.innerHTML = `
       <div class="opinion__ask">
         <p><b>Want a second opinion?</b> Google can check the claims in this pattern, like company names and websites.
-        <span class="muted">Only the pattern is sent, with names and numbers removed. Never your messages.</span></p>
+        <span class="muted">Only the warning signs are sent, each with a short quote, with names, emails and numbers removed. Never the conversation. You can see exactly what was sent.</span></p>
         <button class="btn btn--primary" data-act="judge">Get a second opinion</button>
       </div>`;
     el.querySelector<HTMLButtonElement>('[data-act=judge]')!.onclick = () =>
@@ -130,7 +130,8 @@ function renderOpinion(el: Element, risk: ContactRisk, conv: DemoConversation): 
     <div class="opinion__card verdict-${r.verdict}">
       <h3 class="section-title">Second opinion: ${verdictText}</h3>
       <p class="opinion__summary">${esc(r.summary)}</p>
-      ${r.checks.length ? `<h4>What Google checked</h4><ul class="checks">${r.checks.map((c) => `<li><b>${esc(c.claim)}</b><br>${esc(c.finding)}</li>`).join('')}</ul>` : ''}
+      ${r.grounded ? '' : `<p class="muted small">Google Search wasn't available for this check, so this opinion comes from Gemini alone and hasn't been verified on the web.</p>`}
+      ${r.checks.length ? `<h4>${r.grounded ? 'What Google checked' : 'Claims to be careful about'}</h4><ul class="checks">${r.checks.map((c) => `<li><b>${esc(c.claim)}</b><br>${esc(c.finding)}</li>`).join('')}</ul>` : ''}
       ${r.questions.length ? `<h4>Ask ${esc(firstName(conv.contactName))}</h4><ol class="questions">${r.questions.map((q) => `<li>${esc(q)}</li>`).join('')}</ol>` : ''}
       <div class="search-entry"></div>
       ${r.sources.length ? `<p class="sources">Sources: ${r.sources.map((s) => `<a href="${attr(s.uri)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join(' · ')}</p>` : ''}

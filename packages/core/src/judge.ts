@@ -30,6 +30,8 @@ export interface JudgeResult {
   /** Exactly what left the device. */
   sentSummary: string;
   latencyMs: number;
+  /** True if Google Search grounding was used; false if we fell back to Gemini alone (e.g. search quota). */
+  grounded: boolean;
 }
 
 const JUDGE_SYSTEM = `You are a fraud analyst giving a second opinion to an older adult and their family.
@@ -42,50 +44,69 @@ Reply with ONLY a JSON object:
  "questions":["three questions to ask the contact that a genuine person could answer easily but a scammer cannot, e.g. a live video call today"]}
 At most 3 checks. Exactly 3 questions. Placeholders like [EMAIL_1] are redactions; do not guess them.`;
 
-export function createJudgeModel(ai: AI, cloudModel = DEFAULT_CLOUD_MODEL): GenerativeModel {
+const PLAIN_NOTE =
+  '\nWeb search is unavailable for this request: judge from the pattern and your general knowledge, and say so in "finding" when you cannot verify a claim.';
+
+/** Grounded (Google Search) by default; `grounded: false` gives the no-search fallback. */
+export function createJudgeModel(ai: AI, cloudModel = DEFAULT_CLOUD_MODEL, opts: { grounded?: boolean } = {}): GenerativeModel {
+  const grounded = opts.grounded ?? true;
   return getGenerativeModel(ai, {
     model: cloudModel,
-    systemInstruction: JUDGE_SYSTEM,
-    tools: [{ googleSearch: {} }],
+    systemInstruction: grounded ? JUDGE_SYSTEM : JUDGE_SYSTEM + PLAIN_NOTE,
+    ...(grounded ? { tools: [{ googleSearch: {} }] } : {}),
     generationConfig: { temperature: 0.2 },
   });
 }
 
-/** Build the redacted pattern summary. `names` are redacted (the user's and the contact's names). */
+/**
+ * Build the redacted pattern summary: the warning signs in order, each with a short quote of the
+ * flagged line. Redacted in ONE pass so a person keeps the same placeholder throughout.
+ */
 export function judgeSummary(risk: ContactRisk, opts: { names?: string[]; channel?: string } = {}): string {
   const days = Math.max(...risk.timeline.map((e) => e.day), 0) + 1;
   const lines = [
     `Conversation over ${days} day(s)${opts.channel ? ` on ${opts.channel}` : ''}. Furthest stage: ${
       risk.stageReached ? STAGE_LABELS[risk.stageReached] : 'none'
     }.`,
-    'Warning signs, in order:',
+    'Warning signs, in order (with a short quote of the flagged line):',
   ];
   const seen = new Set<string>();
   for (const e of risk.timeline) {
     const key = `${e.tactic}:${e.day}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    const quote = redact(e.evidence, opts.names ?? []).text.slice(0, 100);
-    lines.push(`- Day ${e.day + 1}: ${TACTICS[e.tactic].label} (${e.stage}). Claim: "${quote}"`);
+    lines.push(`- Day ${e.day + 1}: ${TACTICS[e.tactic].label} (${e.stage}). Quote: "${e.evidence.slice(0, 100)}"`);
   }
-  return lines.join('\n');
+  return redact(lines.join('\n'), opts.names ?? []).text;
 }
 
+/**
+ * Ask for a second opinion. If the grounded call is refused for quota (Google Search grounding has
+ * no free-tier quota) and a `fallback` model is given, retry once without search.
+ */
 export async function judge(
   model: GenerativeModel,
   risk: ContactRisk,
-  opts: { names?: string[]; channel?: string } = {},
+  opts: { names?: string[]; channel?: string; fallback?: GenerativeModel } = {},
 ): Promise<JudgeResult> {
   const sentSummary = judgeSummary(risk, opts);
   const t0 = performance.now();
-  const result = await model.generateContent(sentSummary);
+  let grounded = true;
+  let result;
+  try {
+    result = await model.generateContent(sentSummary);
+  } catch (err) {
+    if (!opts.fallback || !/429|quota|resource.?exhausted/i.test(String((err as Error)?.message ?? err))) throw err;
+    grounded = false;
+    result = await opts.fallback.generateContent(sentSummary);
+  }
   const latencyMs = Math.round(performance.now() - t0);
   const text = result.response.text();
   const meta = result.response.candidates?.[0]?.groundingMetadata;
   const sources = (meta?.groundingChunks ?? [])
     .flatMap((c) => (c.web?.uri ? [{ title: c.web.title ?? c.web.uri, uri: c.web.uri }] : []))
     .slice(0, 5);
-  return { ...parseJudge(text), sources, searchEntryPointHtml: meta?.searchEntryPoint?.renderedContent, sentSummary, latencyMs };
+  return { ...parseJudge(text), sources, searchEntryPointHtml: meta?.searchEntryPoint?.renderedContent, sentSummary, latencyMs, grounded };
 }
 
 export function parseJudge(raw: string): Pick<JudgeResult, 'verdict' | 'summary' | 'checks' | 'questions'> {

@@ -103,16 +103,22 @@ export function setCloudConsent(on: boolean): void {
 }
 
 let judgeModel: GenerativeModel | undefined;
+let judgePlain: GenerativeModel | undefined;
 
 export async function runJudge(risk: ContactRisk, names: string[], channel: string): Promise<void> {
   judgeModel ??= createJudgeModel(ai, env.cloudModel);
+  judgePlain ??= createJudgeModel(ai, env.cloudModel, { grounded: false });
   state.judge.set(risk.contactId, { phase: 'running' });
   emit('judge', risk.contactId);
   try {
-    const result = await judge(judgeModel, risk, { names, channel });
+    const result = await judge(judgeModel, risk, { names, channel, fallback: judgePlain });
     state.judge.set(risk.contactId, { phase: 'done', result });
   } catch (err) {
-    state.judge.set(risk.contactId, { phase: 'error', error: friendlyError(err) });
+    const msg = friendlyError(err);
+    state.judge.set(risk.contactId, {
+      phase: 'error',
+      error: /busy/.test(msg) ? 'Google has reached its limit for second opinions right now. Please try again in a minute.' : msg,
+    });
   }
   emit('judge', risk.contactId);
 }

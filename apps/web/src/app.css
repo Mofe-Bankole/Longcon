@@ -159,3 +159,4 @@ html, body, #app { height: 100%; }
   .thread__scroll { max-height: 70vh; }
   .model { margin-left: 0; }
 }
+.small { font-size: var(--text-sm); margin: 0; }

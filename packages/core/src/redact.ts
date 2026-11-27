@@ -46,13 +46,16 @@ export function redact(input: string, names: string[] = []): RedactionResult {
     return ph;
   };
 
-  // Known names first (the user's own name, family members), longest first.
+  // Emails first, so a name inside an address ("mark.e@…") doesn't break the address apart.
+  text = text.replace(RULES[0]!.re, (m) => placeholder('EMAIL', m));
+
+  // Known names next (the user's own name, family members), longest first.
   for (const name of [...names].filter(Boolean).sort((a, b) => b.length - a.length)) {
     const re = new RegExp(`\\b${escapeRe(name)}\\b`, 'gi');
     text = text.replace(re, (m) => placeholder('PERSON', m));
   }
 
-  for (const { kind, re } of RULES) {
+  for (const { kind, re } of RULES.slice(1)) {
     text = text.replace(re, (m, group?: string) => {
       if (m.startsWith('[')) return m;
       if (kind === 'PHONE' && digits(m) < 7) return m;

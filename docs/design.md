@@ -35,7 +35,7 @@ title card and its closing frame. One motif, repeated, is what made useLeash fee
 | tactic, risk score, escalate | warning sign, how worried we are, get a second opinion |
 | on-device inference | checked privately on this computer |
 | in_cloud (tagging, consented) | checked by Google, with your permission |
-| cloud judge (grounding) | second opinion from Google (only the pattern was sent, not your messages) |
+| cloud judge (grounding) | second opinion from Google (only the warning signs were sent, not the conversation) |
 | rules | quick check |
 | love_bombing | *the `plain` field in `contracts/tactics.json`* ("Very loving words, very soon") |
 
