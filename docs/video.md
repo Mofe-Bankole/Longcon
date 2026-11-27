@@ -33,12 +33,13 @@ test run in CI + "Android: in progress" (say so honestly) and S8 gets the extra 
 | Shot | URL | Action | Length to capture |
 |---|---|---|---|
 | S2 | `longcon.web.app/?c=romance_oil_rig&all=1` | Slowly scroll the thread from top to bottom with the mouse wheel | 40 s |
-| S3 | `longcon.web.app/` | Hold on the full page for 5 s, then hover the model pill | 10 s |
-| S4 | `longcon.web.app/` (Margaret & Mark) | **Reset** → **Play** at *Speed: normal*. Let it run to day 16 without touching anything | the whole run (~50 s) |
+| S3 | `longcon.web.app/#/demo` | Hold on the full page for 5 s, then hover the model pill | 10 s |
+| S4 | `longcon.web.app/#/demo` (Margaret & Mark) | **Reset** → **Play** at *Speed: normal*. Let it run to day 16 without touching anything | the whole run (~50 s) |
 | S5 | continue S4 | When the panel says *This looks like a scam*, click **Read this to me**. **Record system audio** | 20 s |
 | S6 | continue S5 | Scroll the panel down → **Get a second opinion** → wait → scroll through the card → open **What Google saw (exactly)** and scroll it | 40 s |
 | S7b | any laptop **without** Nano (e.g. Mofe's) | Show the pill "This computer can't run the private model" and tick "Let Google check messages" | 10 s |
 | S8 | `longcon.web.app/#/bench` | Run the benchmark (everything ticked except Cloud the first time, then a second run with Cloud ticked). Record only the finished results tables, scrolled slowly | 20 s |
+| S1/S10 | `longcon.web.app/` (landing) | Record the hero card animating (click ↻ to replay), and the full page scrolled slowly for the end card | 20 s |
 | Proof | `chrome://on-device-internals` | Show the model status (for the write-up and a 1 s flash in S3) | 10 s |
 
 Also take 2–3 screenshots of each panel state (warning, scam, second opinion) at full resolution. These are for Devpost.

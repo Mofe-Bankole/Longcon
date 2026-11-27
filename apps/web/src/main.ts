@@ -1,7 +1,7 @@
 import '@longcon/ui';
 import './app.css';
 import { initModel } from './engine';
-import { mountInbox } from './inbox';
+import { mountInbox, openOwn } from './inbox';
 
 const root = document.getElementById('app')!;
 
@@ -14,7 +14,10 @@ async function route(): Promise<void> {
     await import('@longcon/core/src/spike.css');
     const env = envFromVite(import.meta.env);
     mountSpike(root, initLongcon(env), { cloudModel: env.cloudModel, title: 'Longcon · spike' });
-  } else mountInbox(root);
+  } else if (page.startsWith('demo') || new URLSearchParams(location.search).has('c')) {
+    mountInbox(root);
+    if (page === 'demo/own') openOwn();
+  } else (await import('./landing')).mountLanding(root);
 }
 
 window.addEventListener('hashchange', () => location.reload());

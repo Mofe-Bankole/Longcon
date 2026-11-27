@@ -38,7 +38,7 @@ export function mountAbout(root: HTMLElement): void {
   root.innerHTML = `
   <div class="about">
     <header class="about__top"><a class="brand" href="#/"><span class="brand__mark"></span>Longcon</a>
-      <nav><a href="#/">Try the demo</a><a href="#/bench">Benchmark</a><a href="${REPO.replace('/blob/main/', '')}">GitHub</a></nav></header>
+      <nav><a href="#/demo">Try the demo</a><a href="#/bench">Benchmark</a><a href="${REPO.replace('/blob/main/', '')}">GitHub</a></nav></header>
 
     <section class="hero">
       <h1>Catch the scams that take weeks, without your chats leaving your device.</h1>
@@ -46,7 +46,7 @@ export function mountAbout(root: HTMLElement): void {
         first affection, then secrecy, then a story, then "send USDT". Longcon reads that long game on your own device
         with Gemini Nano, and warns you, in plain words, before the money goes.</p>
       <div class="hero__arc"></div>
-      <p><a class="btn btn--primary" href="#/">Watch it read Margaret's 3 weeks →</a></p>
+      <p><a class="btn btn--primary" href="#/demo">Watch it read Margaret's 3 weeks →</a></p>
       <p class="muted">Or check your own: paste a chat or open a WhatsApp export. It's read on your computer.</p>
     </section>
 

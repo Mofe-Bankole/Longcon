@@ -115,6 +115,11 @@ function renderConvs(): void {
   );
 }
 
+/** Open the "check your own conversation" form (used by the #/demo/own link). */
+export function openOwn(): void {
+  openImport();
+}
+
 function openImport(): void {
   for (const c of CONVERSATIONS) pauseConv(c.id);
   document.querySelector('.conv--active')?.classList.remove('conv--active');

@@ -7,7 +7,7 @@ first affection, then "let's move to Telegram", then "don't tell your children",
 Longcon reads that long game on your own device with **Gemini Nano via Firebase AI Logic**, and warns the
 person in plain words, before the money goes.
 
-- **Try it:** https://longcon.web.app: replay six made-up conversations, or **check your own** (paste a chat or open a WhatsApp export; read on your device). Works without Nano via an opt-in cloud mode.
+- **Try it:** https://longcon.web.app (demo at [/#/demo](https://longcon.web.app/#/demo)): replay six made-up conversations, or **check your own** (paste a chat or open a WhatsApp export; read on your device). Works without Nano via an opt-in cloud mode.
 - **How it works, limits, evidence:** https://longcon.web.app/#/about
 - **Video:** _link added at submission_
 
